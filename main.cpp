@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
 
-#include "Vector3D.h"
+#include "MyVectors/Vector3D.h"
 #include "main.h"
 
 using namespace vectors;
