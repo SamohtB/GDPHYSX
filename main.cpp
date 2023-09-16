@@ -2,7 +2,6 @@
 #include <iomanip>
 
 #include "MyVectors/Vector3D.h"
-#include "main.h"
 
 using namespace vectors;
 
@@ -24,15 +23,15 @@ void PrintVectorOperations(Vector3D vectorA, Vector3D vectorB, float scalarValue
 {
     std::cout << "# Operations" << std:: endl << std::endl;
 
-    Vector3D operationResults = vectorA.Addition(vectorB);
+    Vector3D operationResults = vectorA - vectorB;
     std::cout << "A + B = (" << operationResults.GetX() << ", " << operationResults.GetY() << ", " <<
         operationResults.GetZ() << ")" << std::endl;
     
-    operationResults = vectorA.Subtraction(vectorB);
+    operationResults = vectorA - vectorB;
     std::cout << "A - B = (" << operationResults.GetX() << ", " << operationResults.GetY() << ", " <<
         operationResults.GetZ() << ")" << std::endl;
 
-    operationResults = vectorA.ScalarMultiplication(scalarValue);
+    operationResults = vectorA * scalarValue;
     std::cout << "A * S = (" << operationResults.GetX() << ", " << operationResults.GetY() << ", " <<
         operationResults.GetZ() << ")" << std::endl;
     

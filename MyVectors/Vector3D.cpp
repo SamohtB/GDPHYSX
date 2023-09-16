@@ -16,31 +16,46 @@ Vector3D::Vector3D(float x, float y, float z)
 	this->_z = z;
 }
 
-Vector3D Vector3D::Addition(Vector3D vectorB)
+Vector3D Vector3D::operator+(Vector3D vectorB) const
 {
-    float newX = this->GetX() + vectorB.GetX();
-    float newY = this->GetY() + vectorB.GetY();
-    float newZ = this->GetZ() + vectorB.GetZ();
-
-    return Vector3D(newX, newY, newZ);
+    return Vector3D(this->_x + vectorB._x, this->_y + vectorB._y, this->_z + vectorB._z);
 }
 
-Vector3D Vector3D::Subtraction(Vector3D vectorB)
+Vector3D Vector3D::operator+=(Vector3D vectorB)
 {
-    float newX = this->GetX() - vectorB.GetX();
-    float newY = this->GetY() - vectorB.GetY();
-    float newZ = this->GetZ() - vectorB.GetZ();
+    this->_x += vectorB._x;
+    this->_y += vectorB._y;
+    this->_z += vectorB._z;
 
-    return Vector3D(newX, newY, newZ);
+    return *this;
 }
 
-Vector3D Vector3D::ScalarMultiplication(float scalarMultiplier)
-{ 
-    float newX = this->GetX() * scalarMultiplier;
-    float newY = this->GetY() * scalarMultiplier;
-    float newZ = this->GetZ() * scalarMultiplier;
+Vector3D Vector3D::operator-(Vector3D vectorB) const
+{
+    return Vector3D(this->_x - vectorB._x, this->_y - vectorB._y, this->_z - vectorB._z);
+}
 
-    return Vector3D(newX, newY, newZ);
+Vector3D Vector3D::operator-=(Vector3D vectorB)
+{
+    this->_x -= vectorB._x;
+    this->_y -= vectorB._y;
+    this->_z -= vectorB._z;
+
+    return *this;
+}
+
+Vector3D Vector3D::operator*(float scalar) const
+{
+    return Vector3D(this->_x * scalar, this->_y * scalar, this->_z * scalar);
+}
+
+Vector3D Vector3D::operator*=(float scalar)
+{
+    this->_x *= scalar;
+    this->_y *= scalar;
+    this->_z *= scalar;
+
+    return *this;
 }
 
 float Vector3D::DotProduct(Vector3D vectorB)
