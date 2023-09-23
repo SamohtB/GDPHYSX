@@ -1,4 +1,4 @@
-#include "Particles2D.h"
+#include "Particles3D.h"
 
 using namespace physics;
 
@@ -63,5 +63,5 @@ void Particles3D::Integrate(float deltaTime)
 {
 	this->position += this->velocity * deltaTime;
 	this->velocity += this->acceleration * deltaTime;
-	this->velocity += this->velocity * std::powf(damping, deltaTime); 
+	this->velocity *= std::powf(damping, deltaTime); 
 }
