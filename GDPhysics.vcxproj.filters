@@ -21,7 +21,7 @@
     <ClCompile Include="MyVectors\Vector3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles3D.cpp">
+    <ClCompile Include="Physics\Particles\Particles3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameCore\Game.cpp">
@@ -30,12 +30,21 @@
     <ClCompile Include="Entities\Runner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Physics\Particles\ParticleForceRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\ParticleGravity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\ParticleDrag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyVectors\Vector3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles3D.h">
+    <ClInclude Include="Physics\Particles\Particles3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameCore\Game.h">
@@ -45,6 +54,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Runner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\IParticleForceGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\ParticleForceRegistry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\ParticleGravity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\ParticleDrag.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

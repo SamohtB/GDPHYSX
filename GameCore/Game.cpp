@@ -30,10 +30,6 @@ void Game::SetRunners()
             Vector3D(55.0f, 0.0f, 0.0f),    // initial velocity
             Vector3D(3.0f, 0.0f, 0.0f))     // initial acceleration
     );
-
-    
-
-    
     
     this->runnerList[0]->SetName("Bourbon");
     this->runnerList[0]->setFillColor(sf::Color::White);
@@ -98,7 +94,7 @@ void Game::Update(sf::Time deltaTime)
     {
         runner->PhysicsUpdate(deltaTime.asSeconds());
 
-        if(runner->particle.GetPosition().GetX() >= 550.0f && runner->IsFinished() == false)
+        if(runner->particle.GetPosition().x >= 550.0f && runner->IsFinished() == false)
         {
             runner->IsFinished(true);
 

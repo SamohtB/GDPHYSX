@@ -2,6 +2,33 @@
 
 using namespace physics;
 
+Particles3D::Particles3D()
+{
+	this->inverseMass = 0;
+	this->damping = 0.99f;
+
+	this->position = Vector3D();
+	this->velocity = Vector3D();
+	this->acceleration = Vector3D();
+	this->forceAccumulator = Vector3D();
+}
+
+void Particles3D::Integrate(float deltaTime)
+{
+	this->position += this->velocity * deltaTime;
+
+	Vector3D resultingAcceleration = this->acceleration;
+	resultingAcceleration += forceAccumulator * inverseMass;
+	this->velocity += this->acceleration + resultingAcceleration * deltaTime;
+
+	this->velocity *= std::powf(damping, deltaTime);
+	this->ClearAccumulator();
+}
+
+void Particles3D::AddForce(Vector3D force)
+{
+	this->forceAccumulator += force;
+}
 
 void Particles3D::SetDamping(float damping)
 {
@@ -59,9 +86,7 @@ Vector3D Particles3D::GetPosition()
 	return this->position;
 }
 
-void Particles3D::Integrate(float deltaTime)
+void Particles3D::ClearAccumulator()
 {
-	this->position += this->velocity * deltaTime;
-	this->velocity += this->acceleration * deltaTime;
-	this->velocity *= std::powf(damping, deltaTime); 
+	this->forceAccumulator.Zero();
 }

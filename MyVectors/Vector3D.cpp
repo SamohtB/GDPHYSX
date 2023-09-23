@@ -4,81 +4,82 @@ using namespace vectors;
 
 Vector3D::Vector3D()
 {
-	this->_x = 0.0f;
-	this->_y = 0.0f;
-	this->_z = 0.0f;
+	this->x = 0.0f;
+	this->y = 0.0f;
+	this->z = 0.0f;
 }
 
 Vector3D::Vector3D(float x, float y, float z)
 {
-	this->_x = x;
-	this->_y = y;
-	this->_z = z;
+	this->x = x;
+	this->y = y;
+	this->z = z;
 }
 
 Vector3D Vector3D::operator+(Vector3D vectorB) const
 {
-    return Vector3D(this->_x + vectorB._x, this->_y + vectorB._y, this->_z + vectorB._z);
+    return Vector3D(this->x + vectorB.x, this->y + vectorB.y, this->z + vectorB.z);
 }
 
 Vector3D Vector3D::operator+=(Vector3D vectorB)
 {
-    this->_x += vectorB._x;
-    this->_y += vectorB._y;
-    this->_z += vectorB._z;
+    this->x += vectorB.x;
+    this->y += vectorB.y;
+    this->z += vectorB.z;
 
     return *this;
 }
 
 Vector3D Vector3D::operator-(Vector3D vectorB) const
 {
-    return Vector3D(this->_x - vectorB._x, this->_y - vectorB._y, this->_z - vectorB._z);
+    return Vector3D(this->x - vectorB.x, this->y - vectorB.y, this->z - vectorB.z);
 }
 
 Vector3D Vector3D::operator-=(Vector3D vectorB)
 {
-    this->_x -= vectorB._x;
-    this->_y -= vectorB._y;
-    this->_z -= vectorB._z;
+    this->x -= vectorB.x;
+    this->y -= vectorB.y;
+    this->z -= vectorB.z;
 
     return *this;
 }
 
 Vector3D Vector3D::operator*(float scalar) const
 {
-    return Vector3D(this->_x * scalar, this->_y * scalar, this->_z * scalar);
+    return Vector3D(this->x * scalar, this->y * scalar, this->z * scalar);
 }
 
 Vector3D Vector3D::operator*=(float scalar)
 {
-    this->_x *= scalar;
-    this->_y *= scalar;
-    this->_z *= scalar;
+    this->x *= scalar;
+    this->y *= scalar;
+    this->z *= scalar;
 
     return *this;
 }
 
 float Vector3D::DotProduct(Vector3D vectorB)
 {
-    return (this->GetX() * vectorB.GetX() + this->GetY() * vectorB.GetY() + this->GetZ() * vectorB.GetZ());
+    return (this->x * vectorB.x + this->y * vectorB.y + this->z * vectorB.z);
 }
 
 Vector3D Vector3D::CrossProduct(Vector3D vectorB)
 {
-    float newX = this->GetY() * vectorB.GetZ() - this->GetZ() * vectorB.GetY();
-    float newY = this->GetZ() * vectorB.GetX() - this->GetX() * vectorB.GetZ();
-    float newZ = this->GetX() * vectorB.GetY() - this->GetY() * vectorB.GetX();
+    float newX = this->y * vectorB.z - this->z * vectorB.y;
+    float newY = this->z * vectorB.x - this->x * vectorB.z;
+    float newZ = this->x * vectorB.y - this->y * vectorB.x;
 
     return Vector3D(newX, newY, newZ);
 }
 
 float Vector3D::GetMagnitude()
 {
-    float squaredX = this->GetX() * this->GetX();
-    float squaredY = this->GetY() * this->GetY();
-    float squaredZ = this->GetZ() * this->GetZ();
+    return std::sqrt(x * x + y *y + z * z);
+}
 
-    return std::sqrt(squaredX + squaredY + squaredZ);
+float Vector3D::SquareMagnitude()
+{
+    return x * x + y *y + z * z;
 }
 
 Vector3D Vector3D::Normalize()
@@ -87,9 +88,9 @@ Vector3D Vector3D::Normalize()
 
     if(magnitude != 0)
     {
-        float normalizedX = this->GetX() / magnitude;
-        float normalizedY = this->GetY() / magnitude;
-        float normalizedZ = this->GetZ() / magnitude;
+        float normalizedX = this->x / magnitude;
+        float normalizedY = this->y / magnitude;
+        float normalizedZ = this->z / magnitude;
 
         return Vector3D(normalizedX, normalizedY, normalizedZ);
     }
@@ -98,19 +99,11 @@ Vector3D Vector3D::Normalize()
     return Vector3D(0.0f, 0.0f, 0.0f);
 }
 
-float Vector3D::GetX()
+void Vector3D::Zero()
 {
-	return this->_x;
-}
-
-float Vector3D::GetY()
-{
-	return this->_y;
-}
-
-float Vector3D::GetZ()
-{
-	return this->_z;
+    this->x = 0;
+    this->y = 0;
+    this->z = 0;
 }
 
 

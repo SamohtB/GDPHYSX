@@ -4,7 +4,7 @@
 
 #include "SFML/Graphics.hpp"
 #include "../MyVectors/Vector3D.h"
-#include "../Physics/Particles3D.h"
+#include "../Physics/Particles/Particles3D.h"
 
 namespace entity
 {

@@ -22,20 +22,19 @@ namespace vectors
 			Vector3D operator*(float scalar) const;
 			Vector3D operator*=(float scalar);
 
+			void Zero();
+
 			float DotProduct(Vector3D vectorB);
 			Vector3D CrossProduct(Vector3D vectorB);
 
 			Vector3D Normalize();
 			float GetMagnitude();
-	
-			float GetX();
-			float GetY();
-			float GetZ();
+			float SquareMagnitude();
 
-		private:
-			float _x;
-			float _y;
-			float _z;
+		public:
+			float x;
+			float y;
+			float z;
 	};
 }
 

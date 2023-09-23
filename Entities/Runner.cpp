@@ -19,7 +19,7 @@ Runner::Runner(Vector3D initialPosition, Vector3D initialVelocity, Vector3D init
 void Runner::PhysicsUpdate(float deltaTime)
 {
 	this->particle.Integrate(deltaTime);
-	this->setPosition(this->particle.GetPosition().GetX(), this->particle.GetPosition().GetY());
+	this->setPosition(this->particle.GetPosition().x, this->particle.GetPosition().y);
 }
 
 void Runner::IsFinished(bool state)
