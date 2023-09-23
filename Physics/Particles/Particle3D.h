@@ -8,10 +8,10 @@
 namespace physics
 {
 	using namespace vectors;
-	class Particles3D
+	class Particle3D
 	{
 	public:
-		Particles3D();
+		Particle3D();
 		void Integrate(float deltaTime);
 
 	public:
