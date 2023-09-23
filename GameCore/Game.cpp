@@ -30,10 +30,6 @@ void Game::SetRunners()
             Vector3D(55.0f, 0.0f, 0.0f),    // initial velocity
             Vector3D(3.0f, 0.0f, 0.0f))     // initial acceleration
     );
-
-    
-
-    
     
     this->runnerList[0]->SetName("Bourbon");
     this->runnerList[0]->setFillColor(sf::Color::White);
@@ -115,7 +111,7 @@ void Game::Update(sf::Time deltaTime)
     if(this->raceMetrics.size() >= 3)
     {
         isRaceEnd = true;
-        std::cout << std::setprecision(3);
+        std::cout << std::fixed << std::setprecision(2);
         for(int i = 0; i < this->raceMetrics.size(); i++)
         {
             DisplayResults(this->raceMetrics[i], i + 1);
