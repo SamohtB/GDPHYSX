@@ -143,21 +143,29 @@
     <ClCompile Include="GameCore\Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyVectors\Vector3D.cpp" />
+    <ClCompile Include="Physics\Particles\ParticleBouyancy.cpp" />
+    <ClCompile Include="Physics\Particles\ParticleBungee.cpp" />
+    <ClCompile Include="Physics\Particles\ParticleSpring.cpp" />
+    <ClCompile Include="Physics\Particles\ParticleAnchoredSpring.cpp" />
     <ClCompile Include="Physics\Particles\ParticleDrag.cpp" />
     <ClCompile Include="Physics\Particles\ParticleGravity.cpp" />
     <ClCompile Include="Physics\Particles\ParticleForceRegistry.cpp" />
-    <ClCompile Include="Physics\Particles\Particles3D.cpp" />
+    <ClCompile Include="Physics\Particles\Particle3D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config\Settings.h" />
     <ClInclude Include="Entities\Runner.h" />
     <ClInclude Include="GameCore\Game.h" />
     <ClInclude Include="MyVectors\Vector3D.h" />
+    <ClInclude Include="Physics\Particles\ParticleBouyancy.h" />
+    <ClInclude Include="Physics\Particles\ParticleBungee.h" />
+    <ClInclude Include="Physics\Particles\ParticleSpring.h" />
+    <ClInclude Include="Physics\Particles\ParticleAnchoredSpring.h" />
     <ClInclude Include="Physics\Particles\ParticleDrag.h" />
     <ClInclude Include="Physics\Particles\ParticleGravity.h" />
     <ClInclude Include="Physics\Particles\ParticleForceRegistry.h" />
     <ClInclude Include="Physics\Particles\IParticleForceGenerator.h" />
-    <ClInclude Include="Physics\Particles\Particles3D.h" />
+    <ClInclude Include="Physics\Particles\Particle3D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

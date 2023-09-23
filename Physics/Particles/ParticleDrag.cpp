@@ -2,7 +2,7 @@
 
 using namespace physics;
 
-void ParticleDrag::UpdateForce(Particles3D* particle, float deltaTime)
+void ParticleDrag::UpdateForce(Particle3D* particle, float deltaTime)
 {
 	Vector3D velocity = particle->GetVelocity();
 

@@ -11,7 +11,7 @@ void ParticleForceRegistry::UpdateForces(float deltaTime)
 	}
 }
 
-void ParticleForceRegistry::Add(Particles3D* particle, IParticleForceGenerator* forceGenerator)
+void ParticleForceRegistry::Add(Particle3D* particle, IParticleForceGenerator* forceGenerator)
 {
 	ParticleForceRegistration reg = {particle, forceGenerator};
 	this->registrations.push_back(reg);

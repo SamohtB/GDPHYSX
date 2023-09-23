@@ -10,7 +10,7 @@ namespace physics
 	{
 	public:
 		ParticleGravity(Vector3D gravity) : gravity(gravity){};
-		virtual void UpdateForce(Particles3D* particle, float duration);
+		virtual void UpdateForce(Particle3D* particle, float duration);
 	private:
 		Vector3D gravity;
 	};

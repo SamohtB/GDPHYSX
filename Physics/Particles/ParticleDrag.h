@@ -11,7 +11,7 @@ namespace physics
 	public:
 		ParticleDrag(float k1, float k2) : k1(k1), k2(k2) {}
 
-		virtual void UpdateForce(Particles3D* particle, float deltaTime);
+		virtual void UpdateForce(Particle3D* particle, float deltaTime);
 	private:
 		float k1;
 		float k2;

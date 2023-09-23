@@ -4,7 +4,7 @@
 
 #include "SFML/Graphics.hpp"
 #include "../MyVectors/Vector3D.h"
-#include "../Physics/Particles/Particles3D.h"
+#include "../Physics/Particles/Particle3D.h"
 
 namespace entity
 {
@@ -24,7 +24,7 @@ namespace entity
 		bool IsFinished();
 
 	public:
-		Particles3D particle;
+		Particle3D particle;
 
 	private:
 		std::string name;

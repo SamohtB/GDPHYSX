@@ -4,7 +4,7 @@
 
 #include <vector>
 
-#include "Particles3D.h"
+#include "Particle3D.h"
 #include "IParticleForceGenerator.h"
 
 namespace physics
@@ -14,7 +14,7 @@ namespace physics
 	protected:
 		struct ParticleForceRegistration
 		{
-			Particles3D* particle;
+			Particle3D* particle;
 			IParticleForceGenerator* forceGenerator;
 		};
 
@@ -22,8 +22,8 @@ namespace physics
 		Registry registrations;
 
 	public:
-		void Add(Particles3D* particle, IParticleForceGenerator* forceGenerator);
-		void Remove(Particles3D* particle, IParticleForceGenerator* forceGenerator);
+		void Add(Particle3D* particle, IParticleForceGenerator* forceGenerator);
+		void Remove(Particle3D* particle, IParticleForceGenerator* forceGenerator);
 		void Clear();
 		void UpdateForces(float duration);
 	};
