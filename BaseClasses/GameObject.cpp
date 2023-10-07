@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-using namespace gamecore;
+using namespace baseclass;
 
 GameObject::GameObject(std::string name)
 {
@@ -30,4 +30,9 @@ void GameObject::Draw(sf::RenderWindow* window, sf::RenderStates renderStates)
 std::string GameObject::GetName()
 {
 	return this->name;
+}
+
+ObjectType GameObject::GetObjectType()
+{
+	return this->objectType;
 }

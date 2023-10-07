@@ -1,6 +1,6 @@
 #include "Vector3D.h"
 
-using namespace vectors;
+using namespace baseclass;
 
 Vector3D::Vector3D()
 {

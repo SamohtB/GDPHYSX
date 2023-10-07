@@ -12,8 +12,11 @@
 #include "Managers/GameObjectManager.h"
 
 #include "../Physics/Particles/ParticleForceRegistry.h"
+#include "../Physics/Particles/ParticleSpring.h"
+#include "../Physics/Particles/ParticleDrag.h"
+#include "../Physics/Particles/ParticleAnchoredSpring.h"
 #include "../Entities/PhysicsParticle.h"
-
+#include "../Entities/VisibleLine.h"
 
 namespace gamecore
 {
@@ -23,10 +26,9 @@ namespace gamecore
 
 	class Game
 	{
-	private:
-
 	public:
 		Game();
+
 		~Game() = default;
 
 		void Run();
@@ -38,11 +40,19 @@ namespace gamecore
 		sf::RenderWindow renderWindow;
 
 	private:
-		Vector3D mousePos;
-		bool isSpacePressed;
+		void AddParticles();
+		void AddSprings();
+		void AddAttachedLines();
+		void AddDrag();
 
 	private:
+		Vector3D currentMousePos;
+		Vector3D previousMousePos;
+		bool isSpacePressed;
+
 		ParticleForceRegistry* registry;
+		std::vector<PhysicsParticle*> particleList;
+		std::vector<ParticleSpring*> springList;
 	};
 }
 

@@ -57,16 +57,10 @@
     <ClCompile Include="GameCore\Managers\GameObjectManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameCore\GameObject.cpp">
+    <ClCompile Include="BaseClasses\GameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\PhysicsLine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entities\AnchoredSpringObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entities\BungeeSpringObject.cpp">
+    <ClCompile Include="Entities\VisibleLine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,19 +110,13 @@
     <ClInclude Include="GameCore\Managers\GameObjectManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameCore\GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entities\PhysicsLine.h">
+    <ClInclude Include="BaseClasses\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BaseClasses\MyEnums.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\AnchoredSpringObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entities\BungeeSpringObject.h">
+    <ClInclude Include="Entities\VisibleLine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,7 +7,7 @@
 
 namespace physics
 {
-	using namespace vectors;
+	using namespace baseclass;
 	class Particle3D
 	{
 	public:
@@ -29,6 +29,7 @@ namespace physics
 
 		void SetPosition(Vector3D position);
 		Vector3D GetPosition();
+		Vector3D* GetPositionReference();
 
 		void AddForce(Vector3D force);
 		void ClearAccumulator();

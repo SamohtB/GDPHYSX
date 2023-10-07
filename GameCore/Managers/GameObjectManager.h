@@ -5,11 +5,12 @@
 #include <vector>
 
 #include "SFML/Graphics.hpp"
-#include "../GameObject.h"
+#include "../../BaseClasses/GameObject.h"
+#include "../../BaseClasses/MyEnums.h"
 
 namespace singleton
 {
-    using namespace gamecore;
+    using namespace baseclass;
 
     class GameObjectManager
     {
@@ -20,6 +21,7 @@ namespace singleton
         void Draw(sf::RenderWindow* window);
 
         void AddObject(GameObject* gameObject);
+        std::vector<GameObject*> GetObjectOfType(ObjectType type);
 
     private:
         std::vector<GameObject*> gameObjectList;

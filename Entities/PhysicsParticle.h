@@ -5,12 +5,13 @@
 #include "SFML/Graphics.hpp"
 
 #include "../Physics/Particles/Particle3D.h"
-#include "../GameCore/GameObject.h"
+#include "../BaseClasses/GameObject.h"
+#include "../BaseClasses/MyEnums.h"
 
 namespace entity
 {
 	using namespace physics;
-	using namespace gamecore;
+	using namespace baseclass;
 
 	class PhysicsParticle :  public GameObject, sf::CircleShape
 	{

@@ -4,15 +4,16 @@ using namespace entity;
 
 PhysicsParticle::PhysicsParticle(std::string name) : GameObject(name), sf::CircleShape()
 {
-
+	
 }
 
 void PhysicsParticle::Initialize()
 {
+	this->objectType = ObjectType::PARTICLE;
 	this->setRadius(50.0f);
 	this->setFillColor(sf::Color::Green);
 	this->setOrigin(50.0f, 50.0f);
-	this->particle.SetMass(1);
+	this->particle.SetMass(2);
 }
 
 void PhysicsParticle::PhysicsUpdate(sf::Time deltaTime)

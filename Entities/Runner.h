@@ -8,7 +8,7 @@
 
 namespace entity
 {
-	using namespace vectors;
+	using namespace baseclass;
 	using namespace physics;
 
 	class Runner : public sf::CircleShape

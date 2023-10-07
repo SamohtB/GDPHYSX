@@ -86,6 +86,11 @@ Vector3D Particle3D::GetPosition()
 	return this->position;
 }
 
+Vector3D* Particle3D::GetPositionReference()
+{
+	return &this->position;
+}
+
 void Particle3D::ClearAccumulator()
 {
 	this->forceAccumulator.Zero();

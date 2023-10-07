@@ -5,7 +5,7 @@
 #include <iostream>
 #include <cmath>
 
-namespace vectors
+namespace baseclass
 {
 	class Vector3D
 	{

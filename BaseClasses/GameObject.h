@@ -6,7 +6,9 @@
 
 #include "SFML/Graphics.hpp"
 
-namespace gamecore
+#include "MyEnums.h"
+
+namespace baseclass
 {
 	class GameObject
 	{
@@ -20,10 +22,11 @@ namespace gamecore
         virtual void Draw(sf::RenderWindow* window, sf::RenderStates renderStates);
 
 		std::string GetName();
+		ObjectType GetObjectType();
 
 	protected:
 		std::string name;
-
+		ObjectType objectType;
 	};
 }
 

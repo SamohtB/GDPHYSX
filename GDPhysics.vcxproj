@@ -139,12 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Entities\BungeeSpringObject.cpp" />
-    <ClCompile Include="Entities\AnchoredSpringObject.cpp" />
-    <ClCompile Include="Entities\PhysicsLine.cpp" />
     <ClCompile Include="Entities\Runner.cpp" />
     <ClCompile Include="GameCore\Game.cpp" />
-    <ClCompile Include="GameCore\GameObject.cpp" />
+    <ClCompile Include="BaseClasses\GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="BaseClasses\Vector3D.cpp" />
     <ClCompile Include="GameCore\Managers\GameObjectManager.cpp" />
@@ -157,17 +154,15 @@
     <ClCompile Include="Physics\Particles\ParticleForceRegistry.cpp" />
     <ClCompile Include="Physics\Particles\Particle3D.cpp" />
     <ClCompile Include="Entities\PhysicsParticle.cpp" />
+    <ClCompile Include="Entities\VisibleLine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entities\BungeeSpringObject.h" />
-    <ClInclude Include="Entities\AnchoredSpringObject.h" />
     <ClInclude Include="BaseClasses\MyEnums.h" />
     <ClInclude Include="Config\Settings.h" />
-    <ClInclude Include="Entities\PhysicsLine.h" />
     <ClInclude Include="Entities\Runner.h" />
     <ClInclude Include="GameCore\Game.h" />
     <ClInclude Include="BaseClasses\Vector3D.h" />
-    <ClInclude Include="GameCore\GameObject.h" />
+    <ClInclude Include="BaseClasses\GameObject.h" />
     <ClInclude Include="GameCore\Managers\GameObjectManager.h" />
     <ClInclude Include="Physics\Particles\ParticleBouyancy.h" />
     <ClInclude Include="Physics\Particles\ParticleBungee.h" />
@@ -179,6 +174,7 @@
     <ClInclude Include="Physics\Particles\IParticleForceGenerator.h" />
     <ClInclude Include="Physics\Particles\Particle3D.h" />
     <ClInclude Include="Entities\PhysicsParticle.h" />
+    <ClInclude Include="Entities\VisibleLine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
