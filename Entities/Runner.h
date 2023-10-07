@@ -3,7 +3,7 @@
 #define ENTITY_RUNNER_H
 
 #include "SFML/Graphics.hpp"
-#include "../MyVectors/Vector3D.h"
+#include "../BaseClasses/Vector3D.h"
 #include "../Physics/Particles/Particle3D.h"
 
 namespace entity

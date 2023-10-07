@@ -13,7 +13,7 @@ namespace physics
 			anchor(anchor), springConstant(springConstant), restLength(restLength) {}
 
 		virtual void UpdateForce(Particle3D* particle, float deltaTime);
-
+		
 	private:
 		Vector3D* anchor;
 		float springConstant;

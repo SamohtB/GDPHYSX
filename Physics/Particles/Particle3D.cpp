@@ -4,7 +4,7 @@ using namespace physics;
 
 Particle3D::Particle3D()
 {
-	this->inverseMass = 0;
+	this->inverseMass = 1;
 	this->damping = 0.99f;
 
 	this->position = Vector3D();
@@ -90,3 +90,5 @@ void Particle3D::ClearAccumulator()
 {
 	this->forceAccumulator.Zero();
 }
+
+
