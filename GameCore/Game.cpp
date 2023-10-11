@@ -40,26 +40,11 @@ void Game::ProcessInput()
             case sf::Event::Closed:
                 this->renderWindow.close();
                 break;
-            
-            case sf::Event::KeyPressed:
-                this->ProcessKeyBoardInput(eEvent.key.code, true);
-                break;
-
-            case sf::Event::KeyReleased:
-                this->ProcessKeyBoardInput(eEvent.key.code, false);
-                break;
 
             default:
+                GameObjectManager::GetInstance()->ProcessInput(eEvent);
                 break;
         }
-    }
-}
-
-void Game::ProcessKeyBoardInput(sf::Keyboard::Key key, bool keyState)
-{
-    if(key == sf::Keyboard::Space)
-    {
-        this->isSpacePressed = keyState;
     }
 }
 

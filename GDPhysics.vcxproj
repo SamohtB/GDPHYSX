@@ -139,9 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Entities\Runner.cpp" />
+    <ClCompile Include="BaseClasses\Component.cpp" />
     <ClCompile Include="GameCore\Game.cpp" />
     <ClCompile Include="BaseClasses\GameObject.cpp" />
+    <ClCompile Include="Entities\Components\Input\GeneralInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="BaseClasses\Vector3D.cpp" />
     <ClCompile Include="GameCore\Managers\GameObjectManager.cpp" />
@@ -153,17 +154,17 @@
     <ClCompile Include="Physics\Particles\ParticleGravity.cpp" />
     <ClCompile Include="Physics\Particles\ParticleForceRegistry.cpp" />
     <ClCompile Include="Physics\Particles\Particle3D.cpp" />
-    <ClCompile Include="Entities\PhysicsParticle.cpp" />
-    <ClCompile Include="Entities\VisibleLine.cpp" />
+    <ClCompile Include="Entities\Components\Renderer\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseClasses\MyEnums.h" />
+    <ClInclude Include="BaseClasses\Enums\ComponentType.h" />
+    <ClInclude Include="BaseClasses\Component.h" />
     <ClInclude Include="Config\Settings.h" />
-    <ClInclude Include="Entities\Runner.h" />
     <ClInclude Include="GameCore\Game.h" />
     <ClInclude Include="BaseClasses\Vector3D.h" />
     <ClInclude Include="BaseClasses\GameObject.h" />
     <ClInclude Include="GameCore\Managers\GameObjectManager.h" />
+    <ClInclude Include="Entities\Components\Input\GeneralInput.h" />
     <ClInclude Include="Physics\Particles\ParticleBouyancy.h" />
     <ClInclude Include="Physics\Particles\ParticleBungee.h" />
     <ClInclude Include="Physics\Particles\ParticleSpring.h" />
@@ -173,8 +174,7 @@
     <ClInclude Include="Physics\Particles\ParticleForceRegistry.h" />
     <ClInclude Include="Physics\Particles\IParticleForceGenerator.h" />
     <ClInclude Include="Physics\Particles\Particle3D.h" />
-    <ClInclude Include="Entities\PhysicsParticle.h" />
-    <ClInclude Include="Entities\VisibleLine.h" />
+    <ClInclude Include="Entities\Components\Renderer\Renderer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

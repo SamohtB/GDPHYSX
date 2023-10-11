@@ -40,21 +40,6 @@ void GameObjectManager::AddObject(GameObject* gameObject)
     gameObject->Initialize();
 }
 
-std::vector<GameObject*> GameObjectManager::GetObjectOfType(ObjectType type)
-{
-    std::vector<GameObject*> results;
-
-    for(GameObject* gameObject : this->gameObjectList)
-    {
-        if(gameObject->GetObjectType() == type)
-        {
-            results.push_back(gameObject);
-        }
-    }
-
-    return results;
-}
-
 GameObjectManager* GameObjectManager::Instance = NULL;
 
 GameObjectManager* GameObjectManager::GetInstance()

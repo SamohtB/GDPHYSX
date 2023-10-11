@@ -1,6 +1,6 @@
 #pragma once
-#ifndef VECTORS_3D_H
-#define VECTORS_3D_H
+#ifndef BASECLASS_VECTORS_3D_H
+#define BASECLASS_VECTORS_3D_H
 
 #include <iostream>
 #include <cmath>

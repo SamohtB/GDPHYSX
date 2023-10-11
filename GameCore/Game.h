@@ -15,12 +15,9 @@
 #include "../Physics/Particles/ParticleSpring.h"
 #include "../Physics/Particles/ParticleDrag.h"
 #include "../Physics/Particles/ParticleAnchoredSpring.h"
-#include "../Entities/PhysicsParticle.h"
-#include "../Entities/VisibleLine.h"
 
 namespace gamecore
 {
-	using namespace entity;
 	using namespace singleton;
 	using namespace physics;
 
@@ -33,26 +30,12 @@ namespace gamecore
 
 		void Run();
 		void ProcessInput();
-		void ProcessKeyBoardInput(sf::Keyboard::Key key, bool keyState);
 		void Update(sf::Time deltaTime);
 		void Render();
 
+	private:
 		sf::RenderWindow renderWindow;
-
-	private:
-		void AddParticles();
-		void AddSprings();
-		void AddAttachedLines();
-		void AddDrag();
-
-	private:
-		Vector3D currentMousePos;
-		Vector3D previousMousePos;
-		bool isSpacePressed;
-
 		ParticleForceRegistry* registry;
-		std::vector<PhysicsParticle*> particleList;
-		std::vector<ParticleSpring*> springList;
 	};
 }
 
