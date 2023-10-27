@@ -2,7 +2,7 @@
 #ifndef PHYSICS_PARTICLE_BUNGEE_H
 #define PHYSICS_PARTICLE_BUNGEE_H
 
-#include "IParticleForceGenerator.h"
+#include "../IParticleForceGenerator.h"
 
 namespace physics
 {

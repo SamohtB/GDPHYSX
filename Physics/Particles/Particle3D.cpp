@@ -55,6 +55,11 @@ float Particle3D::GetMass()
 
 	return 1.0f / this->inverseMass;
 }
+
+float Particle3D::GetInverseMass()
+{
+	return this->inverseMass;
+}
 		
 void Particle3D::SetVelocity(Vector3D velocity)
 {

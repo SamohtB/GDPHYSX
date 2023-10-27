@@ -20,6 +20,7 @@ namespace physics
 
 		void SetMass(float mass);
 		float GetMass();
+		float GetInverseMass();
 
 		void SetVelocity(Vector3D velocity);
 		Vector3D GetVelocity();
