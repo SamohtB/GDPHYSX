@@ -5,7 +5,6 @@ using namespace gamecore;
 Game::Game() : renderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Thomas Banatin", sf::Style::Titlebar | sf::Style::Close)
 {
 	this->renderWindow.setFramerateLimit(FRAME_RATE_LIMIT);
-    this->registry = new ParticleForceRegistry();
 }
 
 void Game::Run()
@@ -50,7 +49,6 @@ void Game::ProcessInput()
 
 void Game::Update(sf::Time deltaTime)
 {
-    this->registry->UpdateForces(deltaTime.asSeconds());
     GameObjectManager::GetInstance()->PhysicsUpdate(deltaTime);
 }
 

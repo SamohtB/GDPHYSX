@@ -43,9 +43,8 @@ namespace baseclass
 		sf::Sprite* GetSprite();
 
 		bool GetEnabledStatus();
-		void SetEnabledStatus(bool status);
+		virtual void SetEnabledStatus(bool status);
 		
-
 	protected:
 		bool isEnabled;
 		std::string name;

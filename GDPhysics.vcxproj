@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseClasses\Component.cpp" />
+    <ClCompile Include="Entities\ParticleObject.cpp" />
     <ClCompile Include="GameCore\Game.cpp" />
     <ClCompile Include="BaseClasses\GameObject.cpp" />
     <ClCompile Include="Entities\Components\Input\GeneralInput.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="BaseClasses\Enums\ComponentType.h" />
     <ClInclude Include="BaseClasses\Component.h" />
     <ClInclude Include="Config\Settings.h" />
+    <ClInclude Include="Entities\ParticleObject.h" />
     <ClInclude Include="GameCore\Game.h" />
     <ClInclude Include="BaseClasses\Vector3D.h" />
     <ClInclude Include="BaseClasses\GameObject.h" />

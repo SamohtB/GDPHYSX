@@ -35,7 +35,6 @@ namespace gamecore
 
 	private:
 		sf::RenderWindow renderWindow;
-		ParticleForceRegistry* registry;
 	};
 }
 
