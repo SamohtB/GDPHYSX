@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseClasses\Component.cpp" />
+    <ClCompile Include="BaseClasses\EmptyGameObject.cpp" />
     <ClCompile Include="Entities\ParticleObject.cpp" />
     <ClCompile Include="GameCore\Game.cpp" />
     <ClCompile Include="BaseClasses\GameObject.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="BaseClasses\Vector3D.cpp" />
     <ClCompile Include="GameCore\Managers\GameObjectManager.cpp" />
     <ClCompile Include="Physics\Particles\ParticleContact.cpp" />
+    <ClCompile Include="Physics\Particles\ParticleContactResolver.cpp" />
     <ClCompile Include="Physics\Particles\SpringLikeForces\ParticleBouyancy.cpp" />
     <ClCompile Include="Physics\Particles\SpringLikeForces\ParticleBungee.cpp" />
     <ClCompile Include="Physics\Particles\SpringLikeForces\ParticleSpring.cpp" />
@@ -159,6 +161,7 @@
     <ClCompile Include="Entities\Components\Renderer\Renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseClasses\EmptyGameObject.h" />
     <ClInclude Include="BaseClasses\Enums\ComponentType.h" />
     <ClInclude Include="BaseClasses\Component.h" />
     <ClInclude Include="Config\Settings.h" />
@@ -169,6 +172,7 @@
     <ClInclude Include="GameCore\Managers\GameObjectManager.h" />
     <ClInclude Include="Entities\Components\Input\GeneralInput.h" />
     <ClInclude Include="Physics\Particles\ParticleContact.h" />
+    <ClInclude Include="Physics\Particles\ParticleContactResolver.h" />
     <ClInclude Include="Physics\Particles\SpringLikeForces\ParticleBouyancy.h" />
     <ClInclude Include="Physics\Particles\SpringLikeForces\ParticleBungee.h" />
     <ClInclude Include="Physics\Particles\SpringLikeForces\ParticleSpring.h" />

@@ -22,6 +22,4 @@ namespace physics
 
 #endif // !PHYSICS_PARTICLE_BUNGEE_H
 
-#include "IParticleForceGenerator.h"
-
 

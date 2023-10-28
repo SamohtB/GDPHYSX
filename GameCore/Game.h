@@ -12,9 +12,9 @@
 #include "Managers/GameObjectManager.h"
 
 #include "../Physics/Particles/ParticleForceRegistry.h"
-#include "../Physics/Particles/ParticleSpring.h"
 #include "../Physics/Particles/ParticleDrag.h"
-#include "../Physics/Particles/ParticleAnchoredSpring.h"
+#include "../Physics/Particles/SpringLikeForces/ParticleSpring.h"
+#include "../Physics/Particles/SpringLikeForces/ParticleAnchoredSpring.h"
 
 namespace gamecore
 {

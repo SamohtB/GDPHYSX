@@ -8,9 +8,12 @@ namespace physics
 {
 	class ParticleContact
 	{
+	friend class ParticleContactResolver;
+
 	public:
 		Particle3D* particles[2];
-		float restituion;
+		float restitution;
+		float penetration;
 		Vector3D contactNormal;
 		void Resolve(float deltaTime);
 
@@ -19,6 +22,7 @@ namespace physics
 
 	private:
 		void ResolveVelocity(float duration);
+		void ResolveInterpenetration(float deltaTime);
 	};
 }
 
