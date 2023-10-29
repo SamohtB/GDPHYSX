@@ -12,8 +12,11 @@ namespace physics
 
 	public:
 		Particle3D* particles[2];
+		Vector3D particleMovement[2];
+
 		float restitution;
 		float penetration;
+
 		Vector3D contactNormal;
 		void Resolve(float deltaTime);
 

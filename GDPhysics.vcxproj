@@ -148,6 +148,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="BaseClasses\Vector3D.cpp" />
     <ClCompile Include="GameCore\Managers\GameObjectManager.cpp" />
+    <ClCompile Include="Physics\Particles\Cables\ParticleRod.cpp" />
+    <ClCompile Include="Physics\Particles\Cables\ParticleCable.cpp" />
+    <ClCompile Include="Physics\Particles\Cables\ParticleLink.cpp" />
     <ClCompile Include="Physics\Particles\ParticleContact.cpp" />
     <ClCompile Include="Physics\Particles\ParticleContactResolver.cpp" />
     <ClCompile Include="Physics\Particles\SpringLikeForces\ParticleBouyancy.cpp" />
@@ -171,6 +174,9 @@
     <ClInclude Include="BaseClasses\GameObject.h" />
     <ClInclude Include="GameCore\Managers\GameObjectManager.h" />
     <ClInclude Include="Entities\Components\Input\GeneralInput.h" />
+    <ClInclude Include="Physics\Particles\Cables\ParticleRod.h" />
+    <ClInclude Include="Physics\Particles\Cables\ParticleCable.h" />
+    <ClInclude Include="Physics\Particles\Cables\ParticleLink.h" />
     <ClInclude Include="Physics\Particles\ParticleContact.h" />
     <ClInclude Include="Physics\Particles\ParticleContactResolver.h" />
     <ClInclude Include="Physics\Particles\SpringLikeForces\ParticleBouyancy.h" />

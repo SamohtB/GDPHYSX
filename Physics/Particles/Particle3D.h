@@ -14,7 +14,6 @@ namespace physics
 		Particle3D();
 		void Integrate(float deltaTime);
 
-	public:
 		void SetDamping(float damping);
 		float GetDamping();
 
@@ -36,6 +35,7 @@ namespace physics
 		void ClearAccumulator();
 
 	private:
+		float mass;
 		float inverseMass;
 		float damping;
 

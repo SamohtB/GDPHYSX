@@ -4,12 +4,12 @@ using namespace physics;
 
 void ParticleContactResolver::ResolveContacts(ParticleContact* contactArray, unsigned numContacts, float duration)
 {
-	for(int i = 0; i < iterations; i++)
+	for(unsigned i = 0; i < iterations; i++)
 	{
 		float max = 0.0f;
 		unsigned maxIndex = numContacts;
 
-		for(int i = 0; i < numContacts; i++)
+		for(unsigned i = 0; i < numContacts; i++)
 		{
 			float separationValue = contactArray[i].CalculateSeparatingVelocity();
 
@@ -20,6 +20,34 @@ void ParticleContactResolver::ResolveContacts(ParticleContact* contactArray, uns
 			}
 		}
 
+		if(maxIndex == numContacts)	break;
+
 		contactArray[maxIndex].Resolve(duration);
+
+		Vector3D* move = contactArray[maxIndex].particleMovement;
+
+		for(unsigned j = 0; j < numContacts; j++)
+		{
+			if(contactArray[j].particles[0] == contactArray[maxIndex].particles[0])
+			{
+				contactArray[j].penetration -= move[0].Dot(contactArray[j].contactNormal);
+			}
+			else if(contactArray[j].particles[0] == contactArray[maxIndex].particles[1])
+			{
+				contactArray[j].penetration -= move[1].Dot(contactArray[j].contactNormal);
+			}
+
+			if(contactArray[j].particles[1])
+			{
+				if(contactArray[j].particles[1] == contactArray[maxIndex].particles[0])
+				{
+					contactArray[j].penetration += move[0].Dot(contactArray[j].contactNormal);
+				}
+				else if(contactArray[j].particles[1] == contactArray[maxIndex].particles[1])
+				{
+					 contactArray[j].penetration += move[1].Dot(contactArray[j].contactNormal);
+				}
+			}
+		}
 	}
 }

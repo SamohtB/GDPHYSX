@@ -20,7 +20,7 @@ float ParticleContact::CalculateSeparatingVelocity()
 	return relativeVelocity.Dot(this->contactNormal);
 }
 
-void ParticleContact::ResolveVelocity(float deltaTime)
+void ParticleContact::ResolveVelocity(float duration)
 {
 	float separatingVelocity = CalculateSeparatingVelocity();
 
@@ -55,21 +55,25 @@ void ParticleContact::ResolveInterpenetration(float deltaTime)
 {
 	if(penetration <= 0) { return; }
 
-	float totalInverseMass = this->particles[0]->GetInverseMass();
+	float totalMass = this->particles[0]->GetMass();
 
 	if(this->particles[1])
 	{
-		totalInverseMass +=	particles[1]->GetInverseMass();
+		totalMass += particles[1]->GetMass();
 	}
 
-	if(totalInverseMass <= 0) { return; }
+	Vector3D movePerIMass = this->contactNormal * (penetration / totalMass);
 
-	Vector3D movePerIMass = this->contactNormal * (penetration / totalInverseMass);
-
-	particles[0]->SetPosition(particles[0]->GetPosition() + movePerIMass * particles[0]->GetInverseMass());
+	particleMovement[0] = movePerIMass * particles[0]->GetMass();
+	particles[0]->SetPosition(particles[0]->GetPosition() + particleMovement[0]);
 	
 	if(particles[1])
 	{
-		particles[1]->SetPosition(particles[1]->GetPosition() - movePerIMass * particles[1]->GetInverseMass());
+		particleMovement[1] = movePerIMass * -particles[1]->GetMass();
+		particles[1]->SetPosition(particles[1]->GetPosition() + particleMovement[1]);
+	}
+	else
+	{
+		particleMovement[1].Zero();
 	}
 }
