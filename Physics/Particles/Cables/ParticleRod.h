@@ -10,7 +10,7 @@ namespace physics
 	{
 	public:
 		float length;
-		unsigned FillContact(ParticleContact* contact) override;
+		virtual unsigned FillContact(ParticleContact* contact, unsigned limit);
 	};
 
 }

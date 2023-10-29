@@ -98,4 +98,15 @@ void Particle3D::ClearAccumulator()
 	this->forceAccumulator.Zero();
 }
 
+void Particle3D::SetRadius(float radius)
+{
+	this->radius = radius;
+}
+
+float Particle3D::GetRadius()
+{
+	return this->radius;
+}
+
+
 

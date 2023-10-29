@@ -11,7 +11,7 @@ namespace physics
 	public:
 		float maxLength;
 		float restitution;
-		unsigned FillContact(ParticleContact* contact) override;
+		virtual unsigned FillContact(ParticleContact* contact, unsigned limit);
 	};
 }
 

@@ -2,7 +2,7 @@
 #ifndef PHYSICS_PARTICLE_CONTACT_H
 #define PHYSICS_PARTICLE_CONTACT_H
 
-#include "Particle3D.h"
+#include "../Particle3D.h"
 
 namespace physics
 {

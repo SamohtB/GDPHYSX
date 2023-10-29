@@ -11,8 +11,8 @@
 #include "../Config/Settings.h"
 #include "Managers/GameObjectManager.h"
 
-#include "../Physics/Particles/ParticleForceRegistry.h"
-#include "../Physics/Particles/ParticleDrag.h"
+#include "../Physics/Particles/Forces/ParticleForceRegistry.h"
+#include "../Physics/Particles/Forces/ParticleDrag.h"
 #include "../Physics/Particles/SpringLikeForces/ParticleSpring.h"
 #include "../Physics/Particles/SpringLikeForces/ParticleAnchoredSpring.h"
 

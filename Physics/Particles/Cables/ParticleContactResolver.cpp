@@ -2,6 +2,8 @@
 
 using namespace physics;
 
+ParticleContactResolver::ParticleContactResolver(unsigned iterations) : iterations(iterations) {}
+
 void ParticleContactResolver::ResolveContacts(ParticleContact* contactArray, unsigned numContacts, float duration)
 {
 	for(unsigned i = 0; i < iterations; i++)
@@ -50,4 +52,9 @@ void ParticleContactResolver::ResolveContacts(ParticleContact* contactArray, uns
 			}
 		}
 	}
+}
+
+void ParticleContactResolver::SetIterations(unsigned iterations)
+{
+	this->iterations = iterations;
 }

@@ -2,8 +2,9 @@
 
 using namespace  physics;
 
-unsigned ParticleRod::FillContact(ParticleContact* contact)
+unsigned ParticleRod::FillContact(ParticleContact* contact, unsigned limit)
 {
+	assert(limit > 0);
 	float currentLength = CurrentLength();
 
 	if(currentLength == length)

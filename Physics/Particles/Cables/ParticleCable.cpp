@@ -2,8 +2,9 @@
 
 using namespace physics;
 
-unsigned ParticleCable::FillContact(ParticleContact* contact)
+unsigned ParticleCable::FillContact(ParticleContact* contact, unsigned limit)
 {
+	assert(limit > 0);
 	float length = CurrentLength();
 
 	if(length < maxLength)

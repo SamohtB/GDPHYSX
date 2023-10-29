@@ -34,10 +34,14 @@ namespace physics
 		void AddForce(Vector3D force);
 		void ClearAccumulator();
 
+		void SetRadius(float radius);
+		float GetRadius();
+
 	private:
 		float mass;
 		float inverseMass;
 		float damping;
+		float radius;
 
 		Vector3D position;
 		Vector3D velocity;

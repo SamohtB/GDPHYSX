@@ -24,13 +24,13 @@
     <ClCompile Include="GameCore\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\ParticleForceRegistry.cpp">
+    <ClCompile Include="Physics\Particles\Forces\ParticleForceRegistry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\ParticleGravity.cpp">
+    <ClCompile Include="Physics\Particles\Forces\ParticleGravity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\ParticleDrag.cpp">
+    <ClCompile Include="Physics\Particles\Forces\ParticleDrag.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Particles\Particle3D.cpp">
@@ -54,7 +54,7 @@
     <ClCompile Include="Entities\ParticleObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\ParticleContact.cpp">
+    <ClCompile Include="Physics\Particles\Cables\ParticleContact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Particles\SpringLikeForces\ParticleBouyancy.cpp">
@@ -72,7 +72,7 @@
     <ClCompile Include="BaseClasses\EmptyGameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\ParticleContactResolver.cpp">
+    <ClCompile Include="Physics\Particles\Cables\ParticleContactResolver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Particles\Cables\ParticleLink.cpp">
@@ -82,6 +82,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Particles\Cables\ParticleRod.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\ParticleWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\Cables\ParticleGroundContact.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\Cables\ParticleOverlapContact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,16 +104,16 @@
     <ClInclude Include="Config\Settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\IParticleForceGenerator.h">
+    <ClInclude Include="Physics\Particles\Forces\IParticleForceGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\ParticleForceRegistry.h">
+    <ClInclude Include="Physics\Particles\Forces\ParticleForceRegistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\ParticleGravity.h">
+    <ClInclude Include="Physics\Particles\Forces\ParticleGravity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\ParticleDrag.h">
+    <ClInclude Include="Physics\Particles\Forces\ParticleDrag.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\Particle3D.h">
@@ -131,7 +140,7 @@
     <ClInclude Include="Entities\ParticleObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\ParticleContact.h">
+    <ClInclude Include="Physics\Particles\Cables\ParticleContact.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\SpringLikeForces\ParticleBouyancy.h">
@@ -149,7 +158,7 @@
     <ClInclude Include="BaseClasses\EmptyGameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\ParticleContactResolver.h">
+    <ClInclude Include="Physics\Particles\Cables\ParticleContactResolver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\Cables\ParticleLink.h">
@@ -159,6 +168,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\Cables\ParticleRod.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\ParticleWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Cables\ParticleContactGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Cables\ParticleGroundContact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Cables\ParticleOverlapContact.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
