@@ -23,8 +23,10 @@ namespace entity
 		void PhysicsUpdate(sf::Time deltaTime) override;
 
 		Particle3D* GetParticle();
+		void SetParticleColor(sf::Color color);
 		void SetEnabledStatus(bool status) override;
 		void SetRenderedImage(sf::Texture& texture);
+		void SetRadius(float radius);
 
 		void Reset();
 

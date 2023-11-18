@@ -7,10 +7,8 @@ MassAggregateSystem::MassAggregateSystem(Vector3D gravity, int maxContacts, floa
 	this->particleWorld = new ParticleWorld(maxContacts);
 	this->gravity = new ParticleGravity(gravity);
 	this->overlapContact = new ParticleOverlapContact(restitution);
-	this->groundContact = new ParticleGroundContact(500.0f, restitution);
 
 	this->particleWorld->particleContactGeneratorList.push_back(overlapContact);
-	this->particleWorld->particleContactGeneratorList.push_back(groundContact);
 }
 
 MassAggregateSystem::~MassAggregateSystem()
@@ -18,7 +16,6 @@ MassAggregateSystem::~MassAggregateSystem()
 	delete this->particleWorld;
 	delete this->gravity;
 	delete this->overlapContact;
-	delete this->groundContact;
 }
 
 
@@ -30,12 +27,17 @@ void MassAggregateSystem::Update(float deltaTime)
 
 void MassAggregateSystem::AddParticle(Particle3D* particle, bool hasGravity, bool hasOverlap)
 {
+	if (std::find(this->particleWorld->particleList.begin(), this->particleWorld->particleList.end(), particle) 
+		!= this->particleWorld->particleList.end())
+    {
+        return;
+    }
+
 	this->particleWorld->particleList.push_back(particle);
 
 	if(hasOverlap)
 	{
 		this->overlapContact->AddParticle(particle);
-		this->groundContact->AddParticle(particle);
 	}
 
 	if(hasGravity)
@@ -44,10 +46,10 @@ void MassAggregateSystem::AddParticle(Particle3D* particle, bool hasGravity, boo
 	}
 }
 
-void MassAggregateSystem::AttachParticleToParticleSpring(Particle3D* particle1, Particle3D* particle2, float springConstant, float restLength)
+void MassAggregateSystem::AttachParticleToParticleSpring(Particle3D* particle1, Particle3D* particle2, float springConstant, float restLength, bool hasGravity)
 {
-	this->AddParticle(particle1);
-	this->AddParticle(particle2);
+	this->AddParticle(particle1, hasGravity, true);
+	this->AddParticle(particle2, hasGravity, true);
 
 	ParticleSpring* particleSpring1 = new ParticleSpring(particle2, springConstant, restLength);
 	this->particleWorld->registry.Add(particle1, particleSpring1);
@@ -56,10 +58,10 @@ void MassAggregateSystem::AttachParticleToParticleSpring(Particle3D* particle1, 
 	this->particleWorld->registry.Add(particle2, particleSpring2);
 }
 
-void MassAggregateSystem::AttachParticleToParticleRod(Particle3D* particle, Particle3D* particle2, float maxLength)
+void MassAggregateSystem::AttachParticleToParticleRod(Particle3D* particle, Particle3D* particle2, float maxLength, bool hasGravity)
 {
-	this->AddParticle(particle);
-	this->AddParticle(particle2);
+	this->AddParticle(particle, hasGravity, true);
+	this->AddParticle(particle2, hasGravity, true);
 
 	ParticleRod* particleRod = new ParticleRod();
 
@@ -70,17 +72,17 @@ void MassAggregateSystem::AttachParticleToParticleRod(Particle3D* particle, Part
 	this->particleWorld->particleContactGeneratorList.push_back(particleRod);
 }
 
-void MassAggregateSystem::AttachParticleToAnchoredSpring(Particle3D* particle, Vector3D* anchor, float springConstant, float restLength)
+void MassAggregateSystem::AttachParticleToAnchoredSpring(Particle3D* particle, Vector3D* anchor, float springConstant, float restLength, bool hasGravity)
 {
-	this->AddParticle(particle);
+	this->AddParticle(particle, hasGravity, true);
 
 	ParticleAnchoredSpring* anchoredSpring = new ParticleAnchoredSpring(anchor, springConstant, restLength);
 	this->particleWorld->registry.Add(particle, anchoredSpring);
 }
 
-void MassAggregateSystem::AttachParticleToAnchoredCable(Particle3D* particle, Vector3D* anchor, float maxLength, float restitution)
+void MassAggregateSystem::AttachParticleToAnchoredCable(Particle3D* particle, Vector3D* anchor, float maxLength, float restitution, bool hasGravity)
 {
-	this->AddParticle(particle);
+	this->AddParticle(particle, hasGravity, true);
 	
 	ParticleAnchoredCable* anchoredCable = new ParticleAnchoredCable(maxLength, restitution, anchor);
 	anchoredCable->particles[0] = particle;

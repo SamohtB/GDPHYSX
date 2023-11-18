@@ -11,19 +11,22 @@
 #include "../Config/Settings.h"
 #include "Managers/GameObjectManager.h"
 
-#include "../Physics/Particles/Forces/ParticleForceRegistry.h"
 #include "../Physics/Particles/Forces/ParticleDrag.h"
-#include "../Physics/Particles/SpringLikeForces/ParticleSpring.h"
-#include "../Physics/Particles/SpringLikeForces/ParticleAnchoredSpring.h"
+#include "MassAggregateSystem.h"
 
+#include "../Entities/ParticleObject.h"
+#include "../Entities/VisibleLine.h"
 namespace gamecore
 {
 	using namespace singleton;
 	using namespace physics;
+	using namespace entity;
 
 	class Game
 	{
 	public:
+		void CreateParticles();
+		void CreateRodConnections();
 		Game();
 
 		~Game() = default;
@@ -35,6 +38,9 @@ namespace gamecore
 
 	private:
 		sf::RenderWindow renderWindow;
+		MassAggregateSystem* massAggregateSystem;
+		std::vector<ParticleObject*> particleList;
+		Vector3D* fidgetCenter;
 	};
 }
 

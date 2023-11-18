@@ -21,6 +21,7 @@ namespace baseclass
 			Vector3D operator-=(Vector3D vectorB);
 			Vector3D operator*(float scalar) const;
 			Vector3D operator*=(float scalar);
+			bool operator!=(Vector3D vectorB) const;
 
 			void Zero();
 

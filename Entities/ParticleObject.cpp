@@ -115,3 +115,16 @@ void ParticleObject::SetRenderedImage(sf::Texture& texture)
 		this->hasSprite = true;
 	}
 }
+
+void ParticleObject::SetParticleColor(sf::Color color)
+{
+	this->renderedObject->setFillColor(color);
+}
+
+void ParticleObject::SetRadius(float radius)
+{
+	this->renderedObject->setRadius(radius);
+	this->renderedObject->setOrigin(radius,radius);
+	this->particle->SetRadius(radius);
+	
+}
