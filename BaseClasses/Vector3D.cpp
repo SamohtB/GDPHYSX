@@ -58,17 +58,6 @@ Vector3D Vector3D::operator*=(float scalar)
     return *this;
 }
 
-bool Vector3D::operator!=(Vector3D vectorB) const
-{
-	if(this->x != vectorB.x && this->y != vectorB.y && this->z != vectorB.z)
-	{
-		return true;
-	}
-
-    return false;
-}
-
-
 float Vector3D::Dot(Vector3D vectorB)
 {
     return (this->x * vectorB.x + this->y * vectorB.y + this->z * vectorB.z);
@@ -115,6 +104,12 @@ void Vector3D::Zero()
     this->x = 0;
     this->y = 0;
     this->z = 0;
+}
+
+std::ostream& baseclass::operator<<(std::ostream& os, const Vector3D& vector)
+{
+    os << "(" << vector.x << ", " << vector.y << ", " << vector.z << ")";
+    return os;
 }
 
 

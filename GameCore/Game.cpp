@@ -7,12 +7,14 @@ Game::Game() : renderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Thomas 
 	this->renderWindow.setFramerateLimit(FRAME_RATE_LIMIT);
 	this->fidgetCenter = new Vector3D(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f, 0.0f);
 
-    massAggregateSystem = new MassAggregateSystem(Vector3D(), 30, 0.6f);
+    massAggregateSystem = new MassAggregateSystem(Vector3D(), 50, 0.6f);
 	
     CreateParticles();
 	CreateRodConnections();
 
-	this->particleList[4]->GetParticle()->AddForce(Vector3D(1.0f, 0.0f, 0.0f) * 20000.0f);
+	massAggregateSystem->AttachParticleToAnchoredCable(particleList[0]->GetParticle(), this->fidgetCenter, 50.0f, 0.6f);
+
+	this->particleList[4]->GetParticle()->AddForce(Vector3D(1.0f, 0.f, 0.0f) * 20000);
 }
 
 void Game::CreateParticles()
@@ -21,7 +23,7 @@ void Game::CreateParticles()
 	GameObjectManager::GetInstance()->AddObject(particle);
 
 	particle->GetParticle()->SetMass(50.0f);
-	particle->SetRadius(20.0f);
+	particle->SetRadius(10.0f);
 	particle->GetParticle()->SetDamping(1.0f);
 	particle->SetParticleColor(sf::Color::White);
 	particle->SetPosition(Vector3D(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f, 0.0f));
@@ -32,8 +34,8 @@ void Game::CreateParticles()
 		particle = new ParticleObject("Outside_Particle_" + std::to_string(i + 1));
 		GameObjectManager::GetInstance()->AddObject(particle);
 
-		particle->GetParticle()->SetMass(0.01f);
-		particle->SetRadius(15.0f);
+		particle->GetParticle()->SetMass(0.1f);
+		particle->SetRadius(7.5f);
 		particle->GetParticle()->SetDamping(0.8f);
 		particle->SetParticleColor(sf::Color::Blue);
 
@@ -73,32 +75,42 @@ void Game::CreateRodConnections()
 	for (int i = 0; i < 4; i++)
 	{
 		massAggregateSystem->AttachParticleToParticleRod(this->particleList[0]->GetParticle(),
-			this->particleList[i + 1]->GetParticle(), 100.0f);
+			this->particleList[i + 1]->GetParticle(), 
+			(particleList[0]->GetParticle()->GetPosition() - particleList[i + 1]->GetParticle()->GetPosition()).GetMagnitude());
+
 		VisibleLine* rod = new VisibleLine("Rod_Line", this->particleList[0]->GetParticle()->GetPositionReference(),
 			this->particleList[i + 1]->GetParticle()->GetPositionReference());
 		GameObjectManager::GetInstance()->AddObject(rod);
 	}
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[1]->GetParticle(),
-		this->particleList[4]->GetParticle(), 141.5f);
+		this->particleList[4]->GetParticle(), 
+		(particleList[1]->GetParticle()->GetPosition() - particleList[4]->GetParticle()->GetPosition()).GetMagnitude());
+
 	VisibleLine* rod = new VisibleLine("Rod_Line", this->particleList[1]->GetParticle()->GetPositionReference(),
 		this->particleList[4]->GetParticle()->GetPositionReference());
 	GameObjectManager::GetInstance()->AddObject(rod);
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[1]->GetParticle(),
-		this->particleList[3]->GetParticle(), 141.5f);
-	 rod = new VisibleLine("Rod_Line", this->particleList[1]->GetParticle()->GetPositionReference(),
+		this->particleList[3]->GetParticle(), 
+		(particleList[1]->GetParticle()->GetPosition() - particleList[3]->GetParticle()->GetPosition()).GetMagnitude());
+
+	rod = new VisibleLine("Rod_Line", this->particleList[1]->GetParticle()->GetPositionReference(),
 		this->particleList[3]->GetParticle()->GetPositionReference());
 	GameObjectManager::GetInstance()->AddObject(rod);
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[2]->GetParticle(),
-		this->particleList[4]->GetParticle(), 141.5f);
+		this->particleList[4]->GetParticle(), 
+		(particleList[2]->GetParticle()->GetPosition() - particleList[4]->GetParticle()->GetPosition()).GetMagnitude());
+
 	rod = new VisibleLine("Rod_Line", this->particleList[2]->GetParticle()->GetPositionReference(),
 		this->particleList[4]->GetParticle()->GetPositionReference());
 	GameObjectManager::GetInstance()->AddObject(rod);
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[2]->GetParticle(),
-		this->particleList[3]->GetParticle(), 141.5f);
+		this->particleList[3]->GetParticle(), 
+		(particleList[2]->GetParticle()->GetPosition() - particleList[3]->GetParticle()->GetPosition()).GetMagnitude());
+
 	rod = new VisibleLine("Rod_Line", this->particleList[2]->GetParticle()->GetPositionReference(),
 		this->particleList[3]->GetParticle()->GetPositionReference());
 	GameObjectManager::GetInstance()->AddObject(rod);
@@ -147,8 +159,8 @@ void Game::ProcessInput()
 void Game::Update(sf::Time deltaTime)
 {
     GameObjectManager::GetInstance()->PhysicsUpdate(deltaTime);
+	massAggregateSystem->Update(deltaTime.asSeconds());
 	GameObjectManager::GetInstance()->Update(deltaTime);
-    massAggregateSystem->Update(deltaTime.asSeconds());
 }
 
 void Game::Render()

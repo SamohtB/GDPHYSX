@@ -102,6 +102,9 @@
     <ClCompile Include="Physics\Particles\Cables\ParticleAnchoredCable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameCore\Managers\EventBroadcaster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseClasses\Vector3D.h">
@@ -198,6 +201,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\Cables\ParticleAnchoredCable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Components\Script\EventListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseClasses\Enums\EventKey.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCore\Managers\EventBroadcaster.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
