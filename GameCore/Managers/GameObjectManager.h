@@ -20,6 +20,7 @@ namespace singleton
         void Draw(sf::RenderWindow* window);
 
         void AddObject(GameObject* gameObject);
+        void AddInFront(GameObject* gameObject);
 
     private:
         std::vector<GameObject*> gameObjectList;

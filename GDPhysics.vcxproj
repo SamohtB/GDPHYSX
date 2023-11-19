@@ -143,6 +143,7 @@
     <ClCompile Include="BaseClasses\EmptyGameObject.cpp" />
     <ClCompile Include="Entities\ParticleObject.cpp" />
     <ClCompile Include="Entities\VisibleLine.cpp" />
+    <ClCompile Include="Entities\FidgetSpinner.cpp" />
     <ClCompile Include="GameCore\Managers\EventBroadcaster.cpp" />
     <ClCompile Include="GameCore\Game.cpp" />
     <ClCompile Include="BaseClasses\GameObject.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="Entities\Components\Script\EventListener.h" />
     <ClInclude Include="Entities\ParticleObject.h" />
     <ClInclude Include="Entities\VisibleLine.h" />
+    <ClInclude Include="Entities\FidgetSpinner.h" />
     <ClInclude Include="GameCore\Managers\EventBroadcaster.h" />
     <ClInclude Include="GameCore\Game.h" />
     <ClInclude Include="BaseClasses\Vector3D.h" />

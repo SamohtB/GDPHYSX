@@ -40,6 +40,12 @@ void GameObjectManager::AddObject(GameObject* gameObject)
     gameObject->Initialize();
 }
 
+void GameObjectManager::AddInFront(GameObject* gameObject)
+{
+    this->gameObjectList.emplace(this->gameObjectList.begin(), gameObject);
+    gameObject->Initialize();
+}
+
 GameObjectManager* GameObjectManager::Instance = NULL;
 
 GameObjectManager* GameObjectManager::GetInstance()

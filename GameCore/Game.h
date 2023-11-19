@@ -16,6 +16,8 @@
 
 #include "../Entities/ParticleObject.h"
 #include "../Entities/VisibleLine.h"
+#include "../Entities/FidgetSpinner.h"
+
 namespace gamecore
 {
 	using namespace singleton;
@@ -40,7 +42,8 @@ namespace gamecore
 		sf::RenderWindow renderWindow;
 		MassAggregateSystem* massAggregateSystem;
 		std::vector<ParticleObject*> particleList;
-		Vector3D* fidgetCenter;
+		Vector3D* screenCenter;
+		FidgetSpinner* spinner;
 	};
 }
 

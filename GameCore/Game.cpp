@@ -5,16 +5,19 @@ using namespace gamecore;
 Game::Game() : renderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Thomas Banatin", sf::Style::Titlebar | sf::Style::Close)
 {
 	this->renderWindow.setFramerateLimit(FRAME_RATE_LIMIT);
-	this->fidgetCenter = new Vector3D(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f, 0.0f);
+	this->screenCenter = new Vector3D(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f, 0.0f);
 
-    massAggregateSystem = new MassAggregateSystem(Vector3D(), 50, 0.6f);
+    massAggregateSystem = new MassAggregateSystem(Vector3D(), 30, 0.6f);
 	
     CreateParticles();
 	CreateRodConnections();
 
-	massAggregateSystem->AttachParticleToAnchoredCable(particleList[0]->GetParticle(), this->fidgetCenter, 50.0f, 0.6f);
+	massAggregateSystem->AttachParticleToAnchoredCable(particleList[0]->GetParticle(), this->screenCenter, 50.0f, 0.6f);
 
 	this->particleList[4]->GetParticle()->AddForce(Vector3D(1.0f, 0.f, 0.0f) * 20000);
+
+	this->spinner = new FidgetSpinner("Fidget Spinner", particleList[0], particleList[4]);
+	GameObjectManager::GetInstance()->AddInFront(spinner);
 }
 
 void Game::CreateParticles()
@@ -78,42 +81,42 @@ void Game::CreateRodConnections()
 			this->particleList[i + 1]->GetParticle(), 
 			(particleList[0]->GetParticle()->GetPosition() - particleList[i + 1]->GetParticle()->GetPosition()).GetMagnitude());
 
-		VisibleLine* rod = new VisibleLine("Rod_Line", this->particleList[0]->GetParticle()->GetPositionReference(),
+		/*VisibleLine* rod = new VisibleLine("Rod_Line", this->particleList[0]->GetParticle()->GetPositionReference(),
 			this->particleList[i + 1]->GetParticle()->GetPositionReference());
-		GameObjectManager::GetInstance()->AddObject(rod);
+		GameObjectManager::GetInstance()->AddObject(rod);*/
 	}
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[1]->GetParticle(),
 		this->particleList[4]->GetParticle(), 
 		(particleList[1]->GetParticle()->GetPosition() - particleList[4]->GetParticle()->GetPosition()).GetMagnitude());
 
-	VisibleLine* rod = new VisibleLine("Rod_Line", this->particleList[1]->GetParticle()->GetPositionReference(),
+	/*VisibleLine* rod = new VisibleLine("Rod_Line", this->particleList[1]->GetParticle()->GetPositionReference(),
 		this->particleList[4]->GetParticle()->GetPositionReference());
-	GameObjectManager::GetInstance()->AddObject(rod);
+	GameObjectManager::GetInstance()->AddObject(rod);*/
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[1]->GetParticle(),
 		this->particleList[3]->GetParticle(), 
 		(particleList[1]->GetParticle()->GetPosition() - particleList[3]->GetParticle()->GetPosition()).GetMagnitude());
 
-	rod = new VisibleLine("Rod_Line", this->particleList[1]->GetParticle()->GetPositionReference(),
+	/*rod = new VisibleLine("Rod_Line", this->particleList[1]->GetParticle()->GetPositionReference(),
 		this->particleList[3]->GetParticle()->GetPositionReference());
-	GameObjectManager::GetInstance()->AddObject(rod);
+	GameObjectManager::GetInstance()->AddObject(rod);*/
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[2]->GetParticle(),
 		this->particleList[4]->GetParticle(), 
 		(particleList[2]->GetParticle()->GetPosition() - particleList[4]->GetParticle()->GetPosition()).GetMagnitude());
 
-	rod = new VisibleLine("Rod_Line", this->particleList[2]->GetParticle()->GetPositionReference(),
+	/*rod = new VisibleLine("Rod_Line", this->particleList[2]->GetParticle()->GetPositionReference(),
 		this->particleList[4]->GetParticle()->GetPositionReference());
-	GameObjectManager::GetInstance()->AddObject(rod);
+	GameObjectManager::GetInstance()->AddObject(rod);*/
 
 	massAggregateSystem->AttachParticleToParticleRod(this->particleList[2]->GetParticle(),
 		this->particleList[3]->GetParticle(), 
 		(particleList[2]->GetParticle()->GetPosition() - particleList[3]->GetParticle()->GetPosition()).GetMagnitude());
 
-	rod = new VisibleLine("Rod_Line", this->particleList[2]->GetParticle()->GetPositionReference(),
+	/*rod = new VisibleLine("Rod_Line", this->particleList[2]->GetParticle()->GetPositionReference(),
 		this->particleList[3]->GetParticle()->GetPositionReference());
-	GameObjectManager::GetInstance()->AddObject(rod);
+	GameObjectManager::GetInstance()->AddObject(rod);*/
 }
 
 void Game::Run()
@@ -158,6 +161,7 @@ void Game::ProcessInput()
 
 void Game::Update(sf::Time deltaTime)
 {
+	spinner->SetPosition(this->particleList[0]->GetPosition());
     GameObjectManager::GetInstance()->PhysicsUpdate(deltaTime);
 	massAggregateSystem->Update(deltaTime.asSeconds());
 	GameObjectManager::GetInstance()->Update(deltaTime);
