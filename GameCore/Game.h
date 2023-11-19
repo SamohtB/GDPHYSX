@@ -18,6 +18,8 @@
 #include "../Entities/VisibleLine.h"
 #include "../Entities/FidgetSpinner.h"
 
+#include "../Entities/Components/Script/DistanceTracker.h"
+
 namespace gamecore
 {
 	using namespace singleton;
@@ -39,11 +41,18 @@ namespace gamecore
 		void Render();
 
 	private:
+		void DisplayResults();
+		bool CheckSpeed();
+	private:
 		sf::RenderWindow renderWindow;
 		MassAggregateSystem* massAggregateSystem;
 		std::vector<ParticleObject*> particleList;
 		Vector3D* screenCenter;
 		FidgetSpinner* spinner;
+		DistanceTracker* distanceTracker;
+
+		bool IsSimulating;
+		float timeElapsed;
 	};
 }
 

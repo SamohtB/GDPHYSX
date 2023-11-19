@@ -6,18 +6,23 @@ Game::Game() : renderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Thomas 
 {
 	this->renderWindow.setFramerateLimit(FRAME_RATE_LIMIT);
 	this->screenCenter = new Vector3D(SCREEN_WIDTH / 2.0f, SCREEN_HEIGHT / 2.0f, 0.0f);
+	this->IsSimulating = true;
+	this->timeElapsed = 0.0f;
 
     massAggregateSystem = new MassAggregateSystem(Vector3D(), 30, 0.6f);
 	
     CreateParticles();
 	CreateRodConnections();
 
-	massAggregateSystem->AttachParticleToAnchoredCable(particleList[0]->GetParticle(), this->screenCenter, 50.0f, 0.6f);
+	massAggregateSystem->AttachParticleToAnchoredCable(particleList[0]->GetParticle(), this->screenCenter, 40.0f, 0.6f);
 
 	this->particleList[4]->GetParticle()->AddForce(Vector3D(1.0f, 0.f, 0.0f) * 20000);
 
 	this->spinner = new FidgetSpinner("Fidget Spinner", particleList[0], particleList[4]);
 	GameObjectManager::GetInstance()->AddInFront(spinner);
+
+	distanceTracker = new DistanceTracker("Distance Tracker", particleList[4]->GetPosition());
+	particleList[4]->AttachComponent(distanceTracker);
 }
 
 void Game::CreateParticles()
@@ -125,7 +130,7 @@ void Game::Run()
     sf::Time tLastUpdate = sf::Time::Zero;
     sf::Time tTimePerFrame = sf::seconds(1.0f / FRAME_RATE_LIMIT);
 
-    while(this->renderWindow.isOpen()) 
+    while(this->renderWindow.isOpen() && this->IsSimulating) 
     {
         this->ProcessInput();
         tLastUpdate += CClock.restart();
@@ -138,6 +143,8 @@ void Game::Run()
 
         this->Render();
     }
+
+	DisplayResults();
 }
 
 void Game::ProcessInput()
@@ -165,6 +172,9 @@ void Game::Update(sf::Time deltaTime)
     GameObjectManager::GetInstance()->PhysicsUpdate(deltaTime);
 	massAggregateSystem->Update(deltaTime.asSeconds());
 	GameObjectManager::GetInstance()->Update(deltaTime);
+
+	this->IsSimulating = CheckSpeed();
+	this->timeElapsed += deltaTime.asSeconds();
 }
 
 void Game::Render()
@@ -175,3 +185,21 @@ void Game::Render()
 
     this->renderWindow.display();
 }
+
+void Game::DisplayResults()
+{
+	std::cout << std::setprecision(2) << std::fixed;
+	std::cout << "Spinner has completed : " << this->distanceTracker->GetNumberOfRevolutions(100.0f) << " revolutions" << std::endl;
+	std::cout << "Spinner took " << this->timeElapsed << " secs to reach minimum speed" << std::endl;
+}
+
+bool Game::CheckSpeed()
+{
+	if(this->particleList[4]->GetParticle()->GetVelocity().GetMagnitude() <= 10.0f)
+	{
+		return false;
+	}
+
+	return true;
+}
+
