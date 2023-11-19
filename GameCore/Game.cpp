@@ -129,22 +129,27 @@ void Game::Run()
     sf::Clock CClock = sf::Clock();
     sf::Time tLastUpdate = sf::Time::Zero;
     sf::Time tTimePerFrame = sf::seconds(1.0f / FRAME_RATE_LIMIT);
+	bool IsDisplaying = false;
 
-    while(this->renderWindow.isOpen() && this->IsSimulating) 
+    while(this->renderWindow.isOpen()) 
     {
         this->ProcessInput();
         tLastUpdate += CClock.restart();
 
-        while(tLastUpdate > tTimePerFrame) 
+        while(tLastUpdate > tTimePerFrame && this->IsSimulating) 
         {
             tLastUpdate -= tTimePerFrame;
             this->Update(tTimePerFrame);
         }
 
         this->Render();
-    }
 
-	DisplayResults();
+		if(!this->IsSimulating && IsDisplaying == false)
+		{
+			IsDisplaying = true;
+			DisplayResults();
+		}
+    }
 }
 
 void Game::ProcessInput()
