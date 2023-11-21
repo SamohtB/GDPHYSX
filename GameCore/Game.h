@@ -29,10 +29,7 @@ namespace gamecore
 	class Game
 	{
 	public:
-		void CreateParticles();
-		void CreateRodConnections();
 		Game();
-
 		~Game() = default;
 
 		void Run();
@@ -41,18 +38,8 @@ namespace gamecore
 		void Render();
 
 	private:
-		void DisplayResults();
-		bool CheckSpeed();
-	private:
 		sf::RenderWindow renderWindow;
 		MassAggregateSystem* massAggregateSystem;
-		std::vector<ParticleObject*> particleList;
-		Vector3D* screenCenter;
-		FidgetSpinner* spinner;
-		DistanceTracker* distanceTracker;
-
-		bool IsSimulating;
-		float timeElapsed;
 	};
 }
 
