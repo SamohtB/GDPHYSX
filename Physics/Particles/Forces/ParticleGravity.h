@@ -9,10 +9,10 @@ namespace physics
 	class ParticleGravity : public IParticleForceGenerator
 	{
 	public:
-		ParticleGravity(Vector3D gravity) : gravity(gravity){};
-		virtual void UpdateForce(Particle3D* particle, float duration);
+		ParticleGravity(Vector2D gravity) : gravity(gravity){};
+		virtual void UpdateForce(Particle2D* particle, float duration);
 	private:
-		Vector3D gravity;
+		Vector2D gravity;
 	};
 }
 

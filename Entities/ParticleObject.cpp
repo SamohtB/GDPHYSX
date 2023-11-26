@@ -12,7 +12,7 @@ ParticleObject::ParticleObject(std::string name) : GameObject(name)
 
 void ParticleObject::Initialize()
 {
-	this->particle = new Particle3D();
+	this->particle = new Particle2D();
 	this->renderedObject = new sf::CircleShape();
 	this->renderedObject->setRadius(10.0f);
 	this->renderedObject->setFillColor(sf::Color::White);
@@ -24,12 +24,12 @@ void ParticleObject::Initialize()
 	this->componentList.push_back(renderer);
 }
 
-Vector3D ParticleObject::GetPosition()
+Vector2D ParticleObject::GetPosition()
 {
 	return this->particle->GetPosition();
 }
 
-void ParticleObject::SetPosition(Vector3D position)
+void ParticleObject::SetPosition(Vector2D position)
 {
 	sf::Vector2f position2D = sf::Vector2f(position.x, position.y);
 	if(this->hasSprite)
@@ -44,7 +44,7 @@ void ParticleObject::SetPosition(Vector3D position)
 	this->particle->SetPosition(position);
 }
 
-void ParticleObject::Move(Vector3D displacement) 
+void ParticleObject::Move(Vector2D displacement) 
 {
 	this->SetPosition(this->particle->GetPosition() + displacement);
 }
@@ -67,7 +67,7 @@ void ParticleObject::PhysicsUpdate(sf::Time deltaTime)
 	}
 }
 
-Particle3D* ParticleObject::GetParticle()
+Particle2D* ParticleObject::GetParticle()
 {
 	return this->particle;
 }
@@ -95,8 +95,8 @@ void ParticleObject::SetEnabledStatus(bool status)
 
 void ParticleObject::Reset()
 {
-	this->particle->SetVelocity(Vector3D());
-	this->particle->SetAcceleration(Vector3D());
+	this->particle->SetVelocity(Vector2D());
+	this->particle->SetAcceleration(Vector2D());
 	this->particle->ClearAccumulator();
 }
 

@@ -11,7 +11,7 @@ unsigned ParticleOverlapContact::FillContact(ParticleContact* contact, unsigned 
 	{
 		for(auto p2 = p1 + 1; p2 != particleList.end(); p2++)
 		{
-			Vector3D distanceVector = (*p1)->GetPosition() - (*p2)->GetPosition();
+			Vector2D distanceVector = (*p1)->GetPosition() - (*p2)->GetPosition();
 			float distance = (distanceVector).GetMagnitude() - (*p1)->GetRadius() - (*p2)->GetRadius();
 
 			if(distance < 0.0f)
@@ -36,7 +36,7 @@ unsigned ParticleOverlapContact::FillContact(ParticleContact* contact, unsigned 
 	return count;
 }
 
-void ParticleOverlapContact::AddParticle(Particle3D* particle)
+void ParticleOverlapContact::AddParticle(Particle2D* particle)
 {
 	this->particleList.push_back(particle);
 }

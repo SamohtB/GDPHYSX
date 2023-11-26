@@ -2,7 +2,7 @@
 
 using namespace physics;
 
-void ParticleGravity::UpdateForce(Particle3D* particle, float duration)
+void ParticleGravity::UpdateForce(Particle2D* particle, float duration)
 {
 	particle->AddForce(gravity * particle->GetMass());
 }

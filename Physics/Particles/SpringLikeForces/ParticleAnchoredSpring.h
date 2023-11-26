@@ -9,13 +9,13 @@ namespace physics
 	class ParticleAnchoredSpring : public IParticleForceGenerator
 	{
 	public:
-		ParticleAnchoredSpring(Vector3D* anchor, float springConstant, float restLength) : 
+		ParticleAnchoredSpring(Vector2D* anchor, float springConstant, float restLength) : 
 			anchor(anchor), springConstant(springConstant), restLength(restLength) {}
 
-		virtual void UpdateForce(Particle3D* particle, float deltaTime);
+		virtual void UpdateForce(Particle2D* particle, float deltaTime);
 		
 	private:
-		Vector3D* anchor;
+		Vector2D* anchor;
 		float springConstant;
 		float restLength;
 	};

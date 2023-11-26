@@ -12,7 +12,7 @@ unsigned ParticleGroundContact::FillContact(ParticleContact* contact, unsigned l
 		float deltaY = yLimit - (*p)->GetPosition().y - (*p)->GetRadius();
 		if(deltaY < 0.0f)
 		{
-			contact->contactNormal = Vector3D(0, -1.0f, 0);
+			contact->contactNormal = Vector2D(0, -1.0f);
 			contact->particles[0] = *p;
 			contact->particles[1] = nullptr;
 			contact->penetration = -deltaY;
@@ -30,7 +30,7 @@ unsigned ParticleGroundContact::FillContact(ParticleContact* contact, unsigned l
 	return count;
 }
 
-void ParticleGroundContact::AddParticle(Particle3D* particle)
+void ParticleGroundContact::AddParticle(Particle2D* particle)
 {
 	this->particleList.push_back(particle);
 }

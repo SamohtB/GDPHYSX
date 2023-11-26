@@ -13,13 +13,13 @@ namespace entity
 	class VisibleLine :	public GameObject
 	{
 	public:
-		VisibleLine(std::string name, Vector3D* startPoint, Vector3D* endPoint);
+		VisibleLine(std::string name, Vector2D* startPoint, Vector2D* endPoint);
 		void Initialize() override;
 		void Draw(sf::RenderWindow* window, sf::RenderStates renderStates) override;
 
 	private:
-		Vector3D* startPoint;
-		Vector3D* endPoint;
+		Vector2D* startPoint;
+		Vector2D* endPoint;
 	};
 }
 

@@ -14,10 +14,10 @@ namespace physics
 	public:
 		ParticleOverlapContact(float restitution);
 
-		void AddParticle(Particle3D* particle);
+		void AddParticle(Particle2D* particle);
 		virtual unsigned FillContact(ParticleContact* contact, unsigned limit);
 
-		std::vector<Particle3D*> particleList;
+		std::vector<Particle2D*> particleList;
 		float restitution;
 	};
 }

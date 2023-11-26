@@ -2,7 +2,7 @@
 
 using namespace entity;
 
-VisibleLine::VisibleLine(std::string name, Vector3D* startPoint, Vector3D* endPoint) : GameObject(name)
+VisibleLine::VisibleLine(std::string name, Vector2D* startPoint, Vector2D* endPoint) : GameObject(name)
 {
 	this->startPoint = startPoint;
 	this->endPoint = endPoint;

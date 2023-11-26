@@ -151,7 +151,6 @@
     <ClCompile Include="Entities\Components\Input\GeneralInput.cpp" />
     <ClCompile Include="GameCore\MassAggregateSystem.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="BaseClasses\Vector3D.cpp" />
     <ClCompile Include="GameCore\Managers\GameObjectManager.cpp" />
     <ClCompile Include="Physics\Particles\Cables\ParticleAnchoredCable.cpp" />
     <ClCompile Include="Physics\Particles\Cables\ParticleOverlapContact.cpp" />
@@ -169,8 +168,9 @@
     <ClCompile Include="Physics\Particles\Forces\ParticleDrag.cpp" />
     <ClCompile Include="Physics\Particles\Forces\ParticleGravity.cpp" />
     <ClCompile Include="Physics\Particles\Forces\ParticleForceRegistry.cpp" />
-    <ClCompile Include="Physics\Particles\Particle3D.cpp" />
+    <ClCompile Include="Physics\Particles\Particle2D.cpp" />
     <ClCompile Include="Entities\Components\Renderer\Renderer.cpp" />
+    <ClCompile Include="BaseClasses\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseClasses\EmptyGameObject.h" />
@@ -185,7 +185,6 @@
     <ClInclude Include="Entities\FidgetSpinner.h" />
     <ClInclude Include="GameCore\Managers\EventBroadcaster.h" />
     <ClInclude Include="GameCore\Game.h" />
-    <ClInclude Include="BaseClasses\Vector3D.h" />
     <ClInclude Include="BaseClasses\GameObject.h" />
     <ClInclude Include="GameCore\Managers\GameObjectManager.h" />
     <ClInclude Include="Entities\Components\Input\GeneralInput.h" />
@@ -208,8 +207,9 @@
     <ClInclude Include="Physics\Particles\Forces\ParticleGravity.h" />
     <ClInclude Include="Physics\Particles\Forces\ParticleForceRegistry.h" />
     <ClInclude Include="Physics\Particles\Forces\IParticleForceGenerator.h" />
-    <ClInclude Include="Physics\Particles\Particle3D.h" />
+    <ClInclude Include="Physics\Particles\Particle2D.h" />
     <ClInclude Include="Entities\Components\Renderer\Renderer.h" />
+    <ClInclude Include="BaseClasses\Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

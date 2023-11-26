@@ -19,15 +19,15 @@ namespace gamecore
 	class MassAggregateSystem
 	{
 	public:
-		MassAggregateSystem(Vector3D gravity = Vector3D(0, 100.0f, 0), int maxContacts = 5, float restitution = 0.9f);
+		MassAggregateSystem(Vector2D gravity = Vector2D(0.0f, 100.0f), int maxContacts = 5, float restitution = 0.9f);
 		~MassAggregateSystem();
 
-		void AttachParticleToParticleSpring(Particle3D* particle1, Particle3D* particle2, float springConstant, float restLength, bool hasGravity = true);
-		void AttachParticleToParticleRod(Particle3D* particle, Particle3D* particle2, float maxLength, bool hasGravity = true);
-		void AttachParticleToAnchoredSpring(Particle3D* particle, Vector3D* anchor, float springConstant, float restLength, bool hasGravity = true);
-		void AttachParticleToAnchoredCable(Particle3D* particle, Vector3D* anchor, float maxLength, float restitution, bool hasGravity = true);
+		void AttachParticleToParticleSpring(Particle2D* particle1, Particle2D* particle2, float springConstant, float restLength, bool hasGravity = true);
+		void AttachParticleToParticleRod(Particle2D* particle, Particle2D* particle2, float maxLength, bool hasGravity = true);
+		void AttachParticleToAnchoredSpring(Particle2D* particle, Vector2D* anchor, float springConstant, float restLength, bool hasGravity = true);
+		void AttachParticleToAnchoredCable(Particle2D* particle, Vector2D* anchor, float maxLength, float restitution, bool hasGravity = true);
 
-		void AddParticle(Particle3D* particle, bool hasGravity = true, bool hasOverlap = true);
+		void AddParticle(Particle2D* particle, bool hasGravity = true, bool hasOverlap = true);
 		void Update(float deltaTime);
 
 	private:

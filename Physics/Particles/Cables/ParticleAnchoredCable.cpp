@@ -5,7 +5,7 @@ using namespace physics;
 unsigned ParticleAnchoredCable::FillContact(ParticleContact* contact, unsigned limit)
 {
 	assert(limit > 0);
-	Vector3D vecLength = particles[0]->GetPosition() - *this->anchor;
+	Vector2D vecLength = particles[0]->GetPosition() - *this->anchor;
 	float length = vecLength.GetMagnitude();
 
 	if(length < maxLength)
@@ -16,7 +16,7 @@ unsigned ParticleAnchoredCable::FillContact(ParticleContact* contact, unsigned l
 	contact->particles[0] = particles[0];
 	contact->particles[1] = nullptr;
 
-	Vector3D normal = *this->anchor - particles[0]->GetPosition();
+	Vector2D normal = *this->anchor - particles[0]->GetPosition();
 	normal = normal.Normalize();
 
 	contact->contactNormal = normal;

@@ -3,7 +3,7 @@
 #define COMPONENT_DISTANCE_TRACKER_H
 
 #include "../../../BaseClasses/Component.h"
-#include "../../../BaseClasses/Vector3D.h"
+#include "../../../BaseClasses/Vector2D.h"
 
 namespace component
 {
@@ -12,15 +12,15 @@ namespace component
 	class DistanceTracker : public Component
 	{
 	public:
-		DistanceTracker(std::string name, Vector3D initialPosition);
+		DistanceTracker(std::string name, Vector2D initialPosition);
 		void Perform() override;
 		float GetDistanceTraveled();
 		float GetNumberOfRevolutions(float radius);
 
 	private:
-		float GetDistance(Vector3D vectorA, Vector3D vectorB);
+		float GetDistance(Vector2D vectorA, Vector2D vectorB);
 	private:
-		Vector3D previousPosition;
+		Vector2D previousPosition;
 		float distanceTraveled;
 	};
 }

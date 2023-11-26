@@ -2,9 +2,9 @@
 
 using namespace physics;
 
-void ParticleAnchoredSpring::UpdateForce(Particle3D* particle, float deltaTime)
+void ParticleAnchoredSpring::UpdateForce(Particle2D* particle, float deltaTime)
 {
-	Vector3D d = particle->GetPosition() - *anchor;
+	Vector2D d = particle->GetPosition() - *anchor;
 	float magnitude = d.GetMagnitude();
 
 	magnitude = -springConstant * (magnitude - restLength);

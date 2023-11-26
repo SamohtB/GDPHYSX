@@ -9,10 +9,10 @@ namespace physics
 	class ParticleAnchoredCable : public ParticleLink
 	{
 	public:
-		ParticleAnchoredCable(float maxLength, float restitution, Vector3D* anchor) : maxLength(maxLength), restitution(restitution), anchor(anchor) {}
+		ParticleAnchoredCable(float maxLength, float restitution, Vector2D* anchor) : maxLength(maxLength), restitution(restitution), anchor(anchor) {}
 		float maxLength;
 		float restitution;
-		Vector3D* anchor;
+		Vector2D* anchor;
 		unsigned FillContact(ParticleContact* contact, unsigned limit) override;
 	};
 }

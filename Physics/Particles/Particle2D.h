@@ -2,16 +2,16 @@
 #ifndef PHYSICS_PARTICLES2D_H
 #define PHYSICS_PARTICLES2D_H
 
-#include "../../BaseClasses/Vector3D.h"
+#include "../../BaseClasses/Vector2D.h"
 #include <cassert>
 
 namespace physics
 {
 	using namespace baseclass;
-	class Particle3D
+	class Particle2D
 	{
 	public:
-		Particle3D();
+		Particle2D();
 		void Integrate(float deltaTime);
 
 		void SetDamping(float damping);
@@ -21,17 +21,17 @@ namespace physics
 		float GetMass();
 		float GetInverseMass();
 
-		void SetVelocity(Vector3D velocity);
-		Vector3D GetVelocity();
+		void SetVelocity(Vector2D velocity);
+		Vector2D GetVelocity();
 
-		void SetAcceleration(Vector3D acceleration);
-		Vector3D GetAcceleration();
+		void SetAcceleration(Vector2D acceleration);
+		Vector2D GetAcceleration();
 
-		void SetPosition(Vector3D position);
-		Vector3D GetPosition();
-		Vector3D* GetPositionReference();
+		void SetPosition(Vector2D position);
+		Vector2D GetPosition();
+		Vector2D* GetPositionReference();
 
-		void AddForce(Vector3D force);
+		void AddForce(Vector2D force);
 		void ClearAccumulator();
 
 		void SetRadius(float radius);
@@ -43,10 +43,10 @@ namespace physics
 		float damping;
 		float radius;
 
-		Vector3D position;
-		Vector3D velocity;
-		Vector3D acceleration;
-		Vector3D forceAccumulator;
+		Vector2D position;
+		Vector2D velocity;
+		Vector2D acceleration;
+		Vector2D forceAccumulator;
 	};
 }
 #endif // !PHYSICS_PARTICLES2D_H

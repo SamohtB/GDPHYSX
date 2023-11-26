@@ -25,7 +25,7 @@ namespace  physics
 		unsigned maxContacts;
 		bool calculateIterations;
 
-		std::vector<Particle3D*> particleList;
+		std::vector<Particle2D*> particleList;
 		ParticleForceRegistry registry;
 
 		ParticleContactResolver resolver;

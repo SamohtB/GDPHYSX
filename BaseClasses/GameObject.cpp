@@ -125,24 +125,24 @@ std::vector<Component*> GameObject::GetComponents(ComponentType componentType)
     return found;
 }
 
-Vector3D GameObject::GetPosition()
+Vector2D GameObject::GetPosition()
 {
     sf::Vector2f position2D = this->sprite->getPosition();
 
-    return Vector3D(position2D.x, position2D.y, 0.0f);
+    return Vector2D(position2D.x, position2D.y);
 }
 
-void GameObject::SetPosition(Vector3D position)
+void GameObject::SetPosition(Vector2D position)
 {
     this->sprite->setPosition(position.x, position.y);
 }
 
-void GameObject::Move(Vector3D displacement)
+void GameObject::Move(Vector2D displacement)
 {
     sf::Vector2f position2D = this->sprite->getPosition();
-    Vector3D position3D(position2D.x, position2D.y, 0.0f);
+    Vector2D position3D(position2D.x, position2D.y);
 
-    this->SetPosition(Vector3D(position3D + displacement));
+    this->SetPosition(Vector2D(position3D + displacement));
 }
 
 std::string GameObject::GetName()

@@ -4,7 +4,7 @@
 
 #include "../BaseClasses/GameObject.h"
 #include "Components/Renderer/Renderer.h"
-#include "../Physics/Particles/Particle3D.h"
+#include "../Physics/Particles/Particle2D.h"
 
 namespace entity
 {
@@ -17,12 +17,12 @@ namespace entity
 		ParticleObject(std::string name);
 		void Initialize();
 
-		Vector3D GetPosition() override;
-		void SetPosition(Vector3D position) override;
-		void Move(Vector3D displacement) override;
+		Vector2D GetPosition() override;
+		void SetPosition(Vector2D position) override;
+		void Move(Vector2D displacement) override;
 		void PhysicsUpdate(sf::Time deltaTime) override;
 
-		Particle3D* GetParticle();
+		Particle2D* GetParticle();
 		void SetParticleColor(sf::Color color);
 		void SetEnabledStatus(bool status) override;
 		void SetRenderedImage(sf::Texture& texture);
@@ -32,7 +32,7 @@ namespace entity
 
 	private:
 		sf::CircleShape* renderedObject;
-		Particle3D* particle;
+		Particle2D* particle;
 		bool hasSprite;
 
 	};

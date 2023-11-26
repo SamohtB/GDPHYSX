@@ -2,7 +2,7 @@
 #ifndef PHYSICS_PARTICLE_CONTACT_H
 #define PHYSICS_PARTICLE_CONTACT_H
 
-#include "../Particle3D.h"
+#include "../Particle2D.h"
 
 namespace physics
 {
@@ -11,13 +11,13 @@ namespace physics
 	friend class ParticleContactResolver;
 
 	public:
-		Particle3D* particles[2];
-		Vector3D particleMovement[2];
+		Particle2D* particles[2];
+		Vector2D particleMovement[2];
 
 		float restitution;
 		float penetration;
 
-		Vector3D contactNormal;
+		Vector2D contactNormal;
 		void Resolve(float deltaTime);
 
 	protected:

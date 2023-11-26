@@ -30,7 +30,7 @@ void FidgetSpinner::Update(sf::Time deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	Vector3D up = this->center->GetPosition() + Vector3D(0.0f, -100.0f, 0.0f);
+	Vector2D up = this->center->GetPosition() + Vector2D(0.0f, -100.0f);
 
 	float deltaX = top->GetPosition().x - center->GetPosition().x;
 	float deltaY = top->GetPosition().y - center->GetPosition().y;

@@ -9,7 +9,7 @@
 #include "Enums/ComponentType.h"
 
 #include "Component.h"
-#include "Vector3D.h"
+#include "Vector2D.h"
 
 #include "../Entities/Components/Input/GeneralInput.h"
 #include "../Entities/Components/Renderer/Renderer.h"
@@ -30,9 +30,9 @@ namespace baseclass
 		virtual void PhysicsUpdate(sf::Time deltaTime);
         virtual void Draw(sf::RenderWindow* window, sf::RenderStates renderStates);
 
-		virtual Vector3D GetPosition();
-		virtual void SetPosition(Vector3D position);
-		virtual void Move(Vector3D displacement);
+		virtual Vector2D GetPosition();
+		virtual void SetPosition(Vector2D position);
+		virtual void Move(Vector2D displacement);
 
 		void AttachComponent(Component* component);
         void DetachComponent(Component* component);

@@ -2,13 +2,13 @@
 
 using namespace physics;
 
-void ParticleBouyancy::UpdateForce(Particle3D* particle, float deltaTime)
+void ParticleBouyancy::UpdateForce(Particle2D* particle, float deltaTime)
 {
 	float depth = particle->GetPosition().y;
 
 	if(depth <= waterHeight - maxDepth) { return; }
 
-	Vector3D force = Vector3D();
+	Vector2D force = Vector2D();
 
 	if(depth >= waterHeight + maxDepth)
 	{

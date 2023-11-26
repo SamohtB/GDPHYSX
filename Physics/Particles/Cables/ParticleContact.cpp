@@ -10,7 +10,7 @@ void ParticleContact::Resolve(float deltaTime)
 
 float ParticleContact::CalculateSeparatingVelocity()
 {
-	Vector3D relativeVelocity = this->particles[0]->GetVelocity();
+	Vector2D relativeVelocity = this->particles[0]->GetVelocity();
 
 	if(particles[1]) 
 	{
@@ -39,14 +39,14 @@ void ParticleContact::ResolveVelocity(float duration)
 	if(totalInverseMass <= 0) { return; }
 
 	float impulseMagnitude = deltaVelocity / totalInverseMass;
-	Vector3D impulse = contactNormal * impulseMagnitude;
+	Vector2D impulse = contactNormal * impulseMagnitude;
 
-	Vector3D changeInVelocityA = impulse * particles[0]->GetInverseMass();
+	Vector2D changeInVelocityA = impulse * particles[0]->GetInverseMass();
 	particles[0]->SetVelocity(particles[0]->GetVelocity() + changeInVelocityA);
 
 	if(particles[1])
 	{
-		Vector3D changeInVelocityB = impulse * -particles[1]->GetInverseMass();
+		Vector2D changeInVelocityB = impulse * -particles[1]->GetInverseMass();
 		particles[1]->SetVelocity(particles[1]->GetVelocity() + changeInVelocityB);
 	}
 }
@@ -62,7 +62,7 @@ void ParticleContact::ResolveInterpenetration(float deltaTime)
 		totalMass += particles[1]->GetMass();
 	}
 
-	Vector3D movePerIMass = this->contactNormal * (penetration / totalMass);
+	Vector2D movePerIMass = this->contactNormal * (penetration / totalMass);
 
 	particleMovement[0] = movePerIMass * particles[0]->GetMass();
 	particles[0]->SetPosition(particles[0]->GetPosition() + particleMovement[0]);

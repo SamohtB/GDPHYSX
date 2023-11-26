@@ -12,7 +12,7 @@ namespace physics
 		ParticleBouyancy(float maxDepth, float volume, float waterHeight, float liquidDensity = 1000.0f) :
 			maxDepth(maxDepth), volume(volume), waterHeight(waterHeight), liquidDensity(liquidDensity) {}
 
-		virtual void UpdateForce(Particle3D* particle, float deltaTime);
+		virtual void UpdateForce(Particle2D* particle, float deltaTime);
 
 	private:
 		float maxDepth;

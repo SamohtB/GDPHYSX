@@ -2,9 +2,9 @@
 
 using namespace physics;
 
-void ParticleSpring::UpdateForce(Particle3D* particle, float deltaTime)
+void ParticleSpring::UpdateForce(Particle2D* particle, float deltaTime)
 {
-	Vector3D d = particle->GetPosition() - this->other->GetPosition();
+	Vector2D d = particle->GetPosition() - this->other->GetPosition();
 	
 	float magnitude = d.GetMagnitude();
 	magnitude = -springConstant * (magnitude - restLength);

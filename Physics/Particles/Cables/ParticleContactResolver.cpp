@@ -26,7 +26,7 @@ void ParticleContactResolver::ResolveContacts(ParticleContact* contactArray, uns
 
 		contactArray[maxIndex].Resolve(duration);
 
-		Vector3D* move = contactArray[maxIndex].particleMovement;
+		Vector2D* move = contactArray[maxIndex].particleMovement;
 
 		for(unsigned j = 0; j < numContacts; j++)
 		{

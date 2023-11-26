@@ -9,13 +9,13 @@ namespace physics
     class ParticleSpring : public IParticleForceGenerator
     {
     public:
-        ParticleSpring(Particle3D* other, float springConstant, float restLength) : 
+        ParticleSpring(Particle2D* other, float springConstant, float restLength) : 
 			other(other), springConstant(springConstant), restLength(restLength) {}
 
-        virtual void UpdateForce(Particle3D* particle, float deltaTime);
+        virtual void UpdateForce(Particle2D* particle, float deltaTime);
 
     private:
-        Particle3D* other;
+        Particle2D* other;
         float springConstant;
         float restLength;
     };
