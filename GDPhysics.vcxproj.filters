@@ -111,16 +111,19 @@
     <ClCompile Include="Physics\Particles\Particle2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\Rigidbodies\Rigidbody2D.cpp">
+    <ClCompile Include="Physics\Rigidbodies\Rigidbody2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\Rigidbodies\Shape2D.cpp">
+    <ClCompile Include="Physics\Rigidbodies\Shape2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\Rigidbodies\CircleShape2D.cpp">
+    <ClCompile Include="Physics\Rigidbodies\CircleShape2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\Rigidbodies\RectShape2D.cpp">
+    <ClCompile Include="Physics\Rigidbodies\RectShape2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Box2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -236,16 +239,19 @@
     <ClInclude Include="Physics\Particles\Particle2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\Rigidbodies\Rigidbody2D.h">
+    <ClInclude Include="Physics\Rigidbodies\Rigidbody2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\Rigidbodies\Shape2D.h">
+    <ClInclude Include="Physics\Rigidbodies\Shape2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\Rigidbodies\CircleShape2D.h">
+    <ClInclude Include="Physics\Rigidbodies\CircleShape2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\Rigidbodies\RectShape2D.h">
+    <ClInclude Include="Physics\Rigidbodies\RectShape2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Box2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

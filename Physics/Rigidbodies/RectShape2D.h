@@ -9,7 +9,7 @@ namespace physics
 	class RectShape2D : public Shape2D
 	{
 		public:
-		RectShape2D(float width, float height) : width(width), height(height) {}
+		RectShape2D(float width = 0.0f, float height = 0.0f);
 		float GetInertiaTensor(float mass) override;
 
 	private:

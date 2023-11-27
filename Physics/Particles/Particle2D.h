@@ -12,7 +12,7 @@ namespace physics
 	{
 	public:
 		Particle2D();
-		void Integrate(float deltaTime);
+		virtual void Integrate(float deltaTime);
 
 		void SetDamping(float damping);
 		float GetDamping();

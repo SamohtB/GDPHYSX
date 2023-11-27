@@ -15,7 +15,7 @@ namespace entity
 	{
 	public:
 		ParticleObject(std::string name);
-		void Initialize();
+		void Initialize() override;
 
 		Vector2D GetPosition() override;
 		void SetPosition(Vector2D position) override;
