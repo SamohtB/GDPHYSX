@@ -46,6 +46,8 @@ namespace physics
 		Vector2D position;
 		Vector2D velocity;
 		Vector2D acceleration;
+
+	public:
 		Vector2D forceAccumulator;
 	};
 }

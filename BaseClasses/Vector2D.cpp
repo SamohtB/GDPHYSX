@@ -99,6 +99,12 @@ float Vector2D::Dot(Vector2D vectorB)
     return (this->x * vectorB.x + this->y * vectorB.y);
 }
 
+float Vector2D::Cross(const Vector2D& rhs)
+{
+	return x * rhs.y - y * rhs.x;
+}
+
+
 float Vector2D::GetMagnitude()
 {
     return std::sqrt(x * x + y * y);

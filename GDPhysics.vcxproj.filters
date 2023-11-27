@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BaseClasses\Vector3D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameCore\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -31,9 +28,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Particles\Forces\ParticleDrag.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics\Particles\Particle3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameCore\Managers\GameObjectManager.cpp">
@@ -114,11 +108,23 @@
     <ClCompile Include="BaseClasses\Vector2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Physics\Particles\Particle2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\Rigidbodies\Rigidbody2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\Rigidbodies\Shape2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\Rigidbodies\CircleShape2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Particles\Rigidbodies\RectShape2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseClasses\Vector3D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameCore\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -135,9 +141,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\Forces\ParticleDrag.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics\Particles\Particle3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameCore\Managers\GameObjectManager.h">
@@ -228,6 +231,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BaseClasses\Vector2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Particle2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Rigidbodies\Rigidbody2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Rigidbodies\Shape2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Rigidbodies\CircleShape2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Particles\Rigidbodies\RectShape2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

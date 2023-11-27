@@ -30,6 +30,7 @@ namespace baseclass
 		void Zero();
 
 		float Dot(Vector2D vectorB);
+		float Cross(const Vector2D &rhs);
 		Vector2D Normalize();
 		float GetMagnitude();
 		float SquareMagnitude();
