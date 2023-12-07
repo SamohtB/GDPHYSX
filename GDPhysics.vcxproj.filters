@@ -78,16 +78,13 @@
     <ClCompile Include="Physics\Particles\Cables\ParticleRod.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Particles\ParticleWorld.cpp">
+    <ClCompile Include="Physics\ParticleWorld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Particles\Cables\ParticleGroundContact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Particles\Cables\ParticleOverlapContact.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameCore\MassAggregateSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entities\VisibleLine.cpp">
@@ -124,6 +121,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entities\Box2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Rigidbodies\RigidbodyForceRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Rigidbodies\RigidbodyGravity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\Rigidbodies\RigidbodySpring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -197,7 +203,7 @@
     <ClInclude Include="Physics\Particles\Cables\ParticleRod.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Particles\ParticleWorld.h">
+    <ClInclude Include="Physics\ParticleWorld.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\Cables\ParticleContactGenerator.h">
@@ -207,9 +213,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Particles\Cables\ParticleOverlapContact.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCore\MassAggregateSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\VisibleLine.h">
@@ -252,6 +255,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Box2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Rigidbodies\RigidbodyForceRegistry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Rigidbodies\RigidbodyForceGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Rigidbodies\RigidbodyGravity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Rigidbodies\RigidbodySpring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

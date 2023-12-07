@@ -2,7 +2,7 @@
 #ifndef GAMECORE_MASS_AGGREGATE_SYSTEM
 #define GAMECORE_MASS_AGGREGATE_SYSTEM
 
-#include "../Physics/Particles/ParticleWorld.h"
+#include "../Physics/ParticleWorld.h"
 #include "../Physics/Particles/Forces/ParticleGravity.h"
 #include "../Physics/Particles/Cables/ParticleOverlapContact.h"
 #include "../Physics/Particles/Cables/ParticleGroundContact.h"

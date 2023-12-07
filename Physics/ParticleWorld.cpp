@@ -35,17 +35,17 @@ unsigned ParticleWorld::GenerateContacts()
 
 void ParticleWorld::StartFrame()
 {
-	for(auto p = particleList.begin(); p != particleList.end(); p++)
+	for(auto r = rigidbodyList.begin(); r != rigidbodyList.end(); r++)
 	{
-		(*p)->ClearAccumulator();
+		(*r)->ClearAccumulator();
 	}
 }
 
 void ParticleWorld::Integrate(float deltaTime)
 {
-	for(auto p = particleList.begin(); p != particleList.end(); p++)
+	for(auto r = rigidbodyList.begin(); r != rigidbodyList.end(); r++)
 	{
-		(*p)->Integrate(deltaTime);
+		(*r)->Integrate(deltaTime);
 	}
 }
 

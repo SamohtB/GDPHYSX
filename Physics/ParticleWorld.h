@@ -4,9 +4,10 @@
 
 #include <vector>
 
-#include "Forces/ParticleForceRegistry.h"
-#include "Cables/ParticleContactResolver.h"
-#include "Cables/ParticleContactGenerator.h"
+#include "Rigidbodies/Rigidbody2D.h"
+#include "Rigidbodies/RigidbodyForceRegistry.h"
+#include "Particles/Cables/ParticleContactResolver.h"
+#include "Particles/Cables/ParticleContactGenerator.h"
 
 namespace  physics
 {
@@ -25,8 +26,8 @@ namespace  physics
 		unsigned maxContacts;
 		bool calculateIterations;
 
-		std::vector<Particle2D*> particleList;
-		ParticleForceRegistry registry;
+		std::vector<Rigidbody2D*> rigidbodyList;
+		RigidbodyForceRegistry registry;
 
 		ParticleContactResolver resolver;
 		std::vector<ParticleContactGenerator*> particleContactGeneratorList;

@@ -28,4 +28,11 @@ void Rigidbody2D::ClearTorqueAccumulator()
 	this->torqueAccumulator = 0.0f;	
 }
 
+Vector2D Rigidbody2D::GetPointInWorldSpace(Vector2D point)
+{
+	sf::Vector2f temp = this->transformMatrix.transformPoint(point.x, point.y);
+	return Vector2D(temp.x, temp.y);
+}
+
+
 

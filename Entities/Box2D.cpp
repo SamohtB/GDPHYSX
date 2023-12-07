@@ -28,7 +28,11 @@ void Box2D::PhysicsUpdate(sf::Time deltaTime)
 
 	Vector2D pos = this->body.GetPosition();
 	this->sfShape.setPosition(sf::Vector2f(pos.x, pos.y));
-	this->sfShape.setRotation(this->body.rotation * (float)(180.0 / M_PI));
+	this->sfShape.setRotation(this->body.rotation * 57.30f);
+
+	sf::Transform transformMatrix = this->sfShape.getTransform();
+	transformMatrix.translate(this->sfShape.getOrigin());
+	this->body.transformMatrix = transformMatrix;
 }
 
 

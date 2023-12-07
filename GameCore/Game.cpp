@@ -6,6 +6,8 @@ Game::Game() : renderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Thomas 
 {
 	this->renderWindow.setFramerateLimit(FRAME_RATE_LIMIT);
     this->massAggregateSystem = new MassAggregateSystem();
+
+    
 }
 
 void Game::Run()

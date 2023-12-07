@@ -10,15 +10,11 @@
 
 #include "../Config/Settings.h"
 #include "Managers/GameObjectManager.h"
-
-#include "../Physics/Particles/Forces/ParticleDrag.h"
 #include "MassAggregateSystem.h"
 
 #include "../Entities/ParticleObject.h"
-#include "../Entities/VisibleLine.h"
-#include "../Entities/FidgetSpinner.h"
+#include "../Entities/Box2D.h"
 
-#include "../Entities/Components/Script/DistanceTracker.h"
 
 namespace gamecore
 {
