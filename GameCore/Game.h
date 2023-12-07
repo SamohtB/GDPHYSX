@@ -10,7 +10,6 @@
 
 #include "../Config/Settings.h"
 #include "Managers/GameObjectManager.h"
-#include "MassAggregateSystem.h"
 
 #include "../Entities/ParticleObject.h"
 #include "../Entities/Box2D.h"
@@ -35,7 +34,6 @@ namespace gamecore
 
 	private:
 		sf::RenderWindow renderWindow;
-		MassAggregateSystem* massAggregateSystem;
 	};
 }
 

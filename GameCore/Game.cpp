@@ -5,9 +5,6 @@ using namespace gamecore;
 Game::Game() : renderWindow(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Thomas Banatin", sf::Style::Titlebar | sf::Style::Close)
 {
 	this->renderWindow.setFramerateLimit(FRAME_RATE_LIMIT);
-    this->massAggregateSystem = new MassAggregateSystem();
-
-    
 }
 
 void Game::Run()
@@ -53,7 +50,6 @@ void Game::ProcessInput()
 void Game::Update(sf::Time deltaTime)
 {
     GameObjectManager::GetInstance()->PhysicsUpdate(deltaTime);
-	massAggregateSystem->Update(deltaTime.asSeconds());
 	GameObjectManager::GetInstance()->Update(deltaTime);
 }
 

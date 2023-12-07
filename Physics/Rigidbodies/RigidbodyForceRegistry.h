@@ -21,8 +21,8 @@ namespace physics
 
 	public:
 		void Add(Rigidbody2D* particle, RigidbodyForceGenerator* forceGenerator);
-		void Remove(Rigidbody2D* particle, RigidbodyForceGenerator* forceGenerator);
-		void Clear();
+		//void Remove(Rigidbody2D* particle, RigidbodyForceGenerator* forceGenerator);
+		//void Clear();
 		void UpdateForces(float duration);
 
 

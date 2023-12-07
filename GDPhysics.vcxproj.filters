@@ -132,6 +132,9 @@
     <ClCompile Include="Physics\Rigidbodies\RigidbodySpring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Physics\Rigidbodies\CollisionPrimitive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCore\Game.h">
@@ -267,6 +270,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Rigidbodies\RigidbodySpring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Rigidbodies\CollisionPrimitive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\Rigidbodies\IntersectionTests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="BaseClasses\Component.cpp" />
     <ClCompile Include="BaseClasses\EmptyGameObject.cpp" />
+    <ClCompile Include="Physics\Rigidbodies\CollisionPrimitive.cpp" />
     <ClCompile Include="Entities\Box2D.cpp" />
     <ClCompile Include="Physics\Rigidbodies\CircleShape2D.cpp" />
     <ClCompile Include="Entities\Components\Script\DistanceTracker.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="BaseClasses\Enums\ComponentType.h" />
     <ClInclude Include="BaseClasses\Component.h" />
     <ClInclude Include="BaseClasses\Enums\EventKey.h" />
+    <ClInclude Include="Physics\Rigidbodies\CollisionPrimitive.h" />
     <ClInclude Include="Entities\Box2D.h" />
     <ClInclude Include="Physics\Rigidbodies\CircleShape2D.h" />
     <ClInclude Include="Config\Settings.h" />
@@ -218,6 +220,7 @@
     <ClInclude Include="Physics\Particles\Particle2D.h" />
     <ClInclude Include="Entities\Components\Renderer\Renderer.h" />
     <ClInclude Include="BaseClasses\Vector2D.h" />
+    <ClInclude Include="Physics\Rigidbodies\IntersectionTests.h" />
     <ClInclude Include="Physics\Rigidbodies\Rigidbody2D.h" />
     <ClInclude Include="Physics\Rigidbodies\RigidbodyForceGenerator.h" />
     <ClInclude Include="Physics\Rigidbodies\RigidbodyGravity.h" />
