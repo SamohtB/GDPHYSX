@@ -13,6 +13,7 @@ Box2D::Box2D(std::string name, float width, float height, float mass) : GameObje
 	this->body.SetMass(mass);
 	this->body.shape = &this->shape;
 	this->collision.halfSize = Vector2D(width / 2.0f, height / 2.0f);
+	this->collision.body = &(this->body);
 }
 
 void Box2D::Initialize()
