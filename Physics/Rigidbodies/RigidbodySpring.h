@@ -15,7 +15,7 @@ namespace physics
 		float restLength;
 
 	public:
-		RigidbodySpring(Vector2D localConnection, Vector2D otherLocalConnection, Rigidbody2D* other, float springConstant, float restLenght) :
+		RigidbodySpring(Vector2D localConnection, Rigidbody2D* other, Vector2D otherLocalConnection, float springConstant, float restLenght) :
 		localConnection(localConnection), other(other), otherLocalConnection(otherLocalConnection), springConstant(springConstant), restLength(restLenght) {}
 
 		virtual void UpdateForce(Rigidbody2D* rigidbody, float duration) override;

@@ -23,7 +23,7 @@ namespace physics
 
 		sf::Transform transformMatrix;
 
-		Shape2D* shape;
+		Shape2D* shape = nullptr;
 	};
 }
 

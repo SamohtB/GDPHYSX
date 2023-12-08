@@ -141,9 +141,9 @@
   <ItemGroup>
     <ClCompile Include="BaseClasses\Component.cpp" />
     <ClCompile Include="BaseClasses\EmptyGameObject.cpp" />
-    <ClCompile Include="Physics\Rigidbodies\CollisionPrimitive.cpp" />
+    <ClCompile Include="Physics\PhysicsWorld.cpp" />
+    <ClCompile Include="Physics\Rigidbodies\NarrowPhase.cpp" />
     <ClCompile Include="Entities\Box2D.cpp" />
-    <ClCompile Include="Physics\Rigidbodies\CircleShape2D.cpp" />
     <ClCompile Include="Entities\Components\Script\DistanceTracker.cpp" />
     <ClCompile Include="Entities\ParticleObject.cpp" />
     <ClCompile Include="Entities\VisibleLine.cpp" />
@@ -176,8 +176,7 @@
     <ClCompile Include="Physics\Rigidbodies\Rigidbody2D.cpp" />
     <ClCompile Include="Physics\Rigidbodies\RigidbodyGravity.cpp" />
     <ClCompile Include="Physics\Rigidbodies\Shape2D.cpp" />
-    <ClCompile Include="Physics\Rigidbodies\RectShape2D.cpp" />
-    <ClCompile Include="Physics\Rigidbodies\RigidbodyForceRegistry.cpp" />
+    <ClCompile Include="Physics\Rigidbodies\RigidbodyForceGenerator.cpp" />
     <ClCompile Include="Physics\Rigidbodies\RigidbodySpring.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -185,9 +184,9 @@
     <ClInclude Include="BaseClasses\Enums\ComponentType.h" />
     <ClInclude Include="BaseClasses\Component.h" />
     <ClInclude Include="BaseClasses\Enums\EventKey.h" />
-    <ClInclude Include="Physics\Rigidbodies\CollisionPrimitive.h" />
+    <ClInclude Include="Physics\PhysicsWorld.h" />
+    <ClInclude Include="Physics\Rigidbodies\NarrowPhase.h" />
     <ClInclude Include="Entities\Box2D.h" />
-    <ClInclude Include="Physics\Rigidbodies\CircleShape2D.h" />
     <ClInclude Include="Config\Settings.h" />
     <ClInclude Include="Entities\Components\Script\DistanceTracker.h" />
     <ClInclude Include="Entities\Components\Script\EventListener.h" />
@@ -220,13 +219,10 @@
     <ClInclude Include="Physics\Particles\Particle2D.h" />
     <ClInclude Include="Entities\Components\Renderer\Renderer.h" />
     <ClInclude Include="BaseClasses\Vector2D.h" />
-    <ClInclude Include="Physics\Rigidbodies\IntersectionTests.h" />
     <ClInclude Include="Physics\Rigidbodies\Rigidbody2D.h" />
     <ClInclude Include="Physics\Rigidbodies\RigidbodyForceGenerator.h" />
     <ClInclude Include="Physics\Rigidbodies\RigidbodyGravity.h" />
     <ClInclude Include="Physics\Rigidbodies\Shape2D.h" />
-    <ClInclude Include="Physics\Rigidbodies\RectShape2D.h" />
-    <ClInclude Include="Physics\Rigidbodies\RigidbodyForceRegistry.h" />
     <ClInclude Include="Physics\Rigidbodies\RigidbodySpring.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

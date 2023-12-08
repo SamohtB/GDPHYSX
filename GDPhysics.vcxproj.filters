@@ -114,16 +114,10 @@
     <ClCompile Include="Physics\Rigidbodies\Shape2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Rigidbodies\CircleShape2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics\Rigidbodies\RectShape2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Entities\Box2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Rigidbodies\RigidbodyForceRegistry.cpp">
+    <ClCompile Include="Physics\Rigidbodies\RigidbodyForceGenerator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Physics\Rigidbodies\RigidbodyGravity.cpp">
@@ -132,7 +126,10 @@
     <ClCompile Include="Physics\Rigidbodies\RigidbodySpring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Physics\Rigidbodies\CollisionPrimitive.cpp">
+    <ClCompile Include="Physics\Rigidbodies\NarrowPhase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\PhysicsWorld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -251,16 +248,7 @@
     <ClInclude Include="Physics\Rigidbodies\Shape2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Rigidbodies\CircleShape2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics\Rigidbodies\RectShape2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Entities\Box2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics\Rigidbodies\RigidbodyForceRegistry.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Physics\Rigidbodies\RigidbodyForceGenerator.h">
@@ -272,10 +260,10 @@
     <ClInclude Include="Physics\Rigidbodies\RigidbodySpring.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Rigidbodies\CollisionPrimitive.h">
+    <ClInclude Include="Physics\Rigidbodies\NarrowPhase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\Rigidbodies\IntersectionTests.h">
+    <ClInclude Include="Physics\PhysicsWorld.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

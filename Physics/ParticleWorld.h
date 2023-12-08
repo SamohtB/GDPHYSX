@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "Rigidbodies/Rigidbody2D.h"
-#include "Rigidbodies/RigidbodyForceRegistry.h"
+#include "Rigidbodies/RigidbodyForceGenerator.h"
 #include "Particles/Cables/ParticleContactResolver.h"
 #include "Particles/Cables/ParticleContactGenerator.h"
 

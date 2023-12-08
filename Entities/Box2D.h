@@ -5,7 +5,8 @@
 #include "SFML/Graphics.hpp"
 #include "../BaseClasses/GameObject.h"
 #include "../Physics/Rigidbodies/Rigidbody2D.h"
-#include "../Physics/Rigidbodies/RectShape2D.h"
+#include "../Physics/Rigidbodies/Shape2D.h"
+#include "../Physics/Rigidbodies/NarrowPhase.h"
 
 namespace entity
 {
@@ -18,6 +19,7 @@ namespace entity
 		Rigidbody2D body;
 		RectShape2D shape;
 		sf::RectangleShape sfShape;
+		CollisionBox collision;
 
 		Box2D(std::string name, float width, float height, float mass);
 		void Initialize() override;

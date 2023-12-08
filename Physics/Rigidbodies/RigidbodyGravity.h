@@ -12,7 +12,7 @@ namespace physics
 
 	public:
 		RigidbodyGravity(Vector2D gravity) : gravity(gravity){};
-		virtual void UpdateForce(Rigidbody2D* rigidbody, float duration) override;
+		void UpdateForce(Rigidbody2D* rigidbody, float duration) override;
 	};
 }
 #endif
