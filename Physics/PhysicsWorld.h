@@ -6,9 +6,44 @@
 
 #include "Rigidbodies/Rigidbody2D.h"
 #include "Rigidbodies/RigidbodyForceGenerator.h"
+#include "Rigidbodies/RigidbodyContact.h"
+#include "Rigidbodies/NarrowPhase.h"
 
 namespace  physics
 {
+	class RigidbodyContactGenerator
+	{
+	public:
+		virtual unsigned AddContact(RigidbodyContact* contact, unsigned limit) = 0;
+	};
+
+	class BoxFloorContactGenerator : public RigidbodyContactGenerator
+	{
+	public:
+		std::vector<CollisionBox*> collisionList;
+		BoxFloorContactGenerator(CollisionFloor floor, float restitution) :	collisionFloor(floor), restitution(restitution) {}
+
+		virtual unsigned AddContact(RigidbodyContact* contact, unsigned limit) override;
+
+	private:
+		float restitution;
+		CollisionFloor collisionFloor;
+	};
+
+	class BoxBoxContactGenerator : public RigidbodyContactGenerator
+	{
+	public:
+		std::vector<CollisionBox*> collisionList;
+		BoxBoxContactGenerator(float restitution) : restitution(restitution) {}
+
+		virtual unsigned AddContact(RigidbodyContact* contact, unsigned limit) override;
+
+	private:
+		float restitution;
+	};
+
+
+
 	class PhysicsWorld
 	{
 	public:
@@ -24,6 +59,11 @@ namespace  physics
 
 		std::vector<Rigidbody2D*> rigidbodyList;
 		RigidbodyForceRegistry registry;
+		RigidbodyContactResolver resolver;
+		std::vector<RigidbodyContactGenerator*> contactGeneratorList;
+		RigidbodyContact* rigidbodyContactArray;
+
+		unsigned GenerateContacts();
 	};
 }
 

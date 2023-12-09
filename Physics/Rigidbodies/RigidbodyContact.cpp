@@ -58,10 +58,21 @@ void RigidbodyContact::ApplyImpulse()
 
 	if(body[1])
 	{
-		Vector2D changeInVelocityB = impulse * body[1]->GetInverseMass();
+		Vector2D changeInVelocityB = impulse * -body[1]->GetInverseMass();
 		body[1]->SetVelocity(body[1]->GetVelocity() + changeInVelocityB);
-		body[1]->angularVelocity += relativeContactPosition[1].Cross(impulse) / body[1]->GetInertiaTensor();
+		body[1]->angularVelocity -= relativeContactPosition[1].Cross(impulse) / body[1]->GetInertiaTensor();
 	}
 }
+
+void RigidbodyContactResolver::ResolveContacts(RigidbodyContact* contactArray, unsigned numContact, float deltaTime)
+{
+	for(int i = 0; i < numContact; i++)
+	{
+		RigidbodyContact* contact = contactArray + i;
+		contact->CalculateInternals(deltaTime);
+		contact->ApplyImpulse();
+	}
+}
+
 
 

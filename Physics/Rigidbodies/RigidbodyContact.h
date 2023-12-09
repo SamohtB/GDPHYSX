@@ -23,8 +23,14 @@ namespace physics
 		void CalculateInternals(float deltaTime);
 		Vector2D CalculateLocalVelocity(unsigned bodyIndex, float deltaTime);
 		void ApplyImpulse();
-
 	};
+
+	class RigidbodyContactResolver
+	{
+	public:
+		void ResolveContacts(RigidbodyContact* contactArray, unsigned numContact, float deltaTime);
+	};
+
 }
 
 

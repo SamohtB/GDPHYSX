@@ -14,6 +14,13 @@ namespace physics
 		int contactsLeft;
 		unsigned contactCount;
 		float restitution;
+
+		void AddContacts(unsigned count)
+		{
+			contactsLeft -= count;
+			contactCount += count;
+			contacts += count;
+		}
 	};
 
 	class CollisionFloor
@@ -40,12 +47,14 @@ namespace physics
 	{
 	public:
 		static bool BoxAndHalfSpace(CollisionBox& box, CollisionFloor& floor);
+		static bool BoxAndBox(CollisionBox& one, CollisionBox& two);
 	};
 
 	class CollisionDetector
 	{
 	public:
 		static unsigned BoxAndHalfSpace(CollisionBox &box, CollisionFloor &floor, CollisionData* data);
+		static unsigned BoxAndBox(CollisionBox &one, CollisionBox &two, CollisionData* data);
 	};
 }
 
