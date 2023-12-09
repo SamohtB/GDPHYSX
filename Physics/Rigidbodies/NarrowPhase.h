@@ -3,9 +3,19 @@
 #define PHYSICS_NARROW_PHASE_H
 
 #include "Rigidbody2D.h"
+#include "RigidbodyContact.h"
 
 namespace physics
 {
+	struct CollisionData
+	{
+		RigidbodyContact* contactsArray;
+		RigidbodyContact* contacts;
+		int contactsLeft;
+		unsigned contactCount;
+		float restitution;
+	};
+
 	class CollisionFloor
 	{
 	public:
@@ -30,6 +40,12 @@ namespace physics
 	{
 	public:
 		static bool BoxAndHalfSpace(CollisionBox& box, CollisionFloor& floor);
+	};
+
+	class CollisionDetector
+	{
+	public:
+		static unsigned BoxAndHalfSpace(CollisionBox &box, CollisionFloor &floor, CollisionData* data);
 	};
 }
 

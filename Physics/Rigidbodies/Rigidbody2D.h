@@ -15,6 +15,7 @@ namespace physics
 		void AddForceOnPoint(Vector2D point, Vector2D force);
 		void ClearTorqueAccumulator();
 		Vector2D GetPointInWorldSpace(Vector2D point);
+		float GetInertiaTensor();
 
 		float rotation = 0.0f;
 		float angularVelocity = 0.0f;

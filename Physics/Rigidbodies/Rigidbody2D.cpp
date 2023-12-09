@@ -34,5 +34,10 @@ Vector2D Rigidbody2D::GetPointInWorldSpace(Vector2D point)
 	return Vector2D(temp.x, temp.y);
 }
 
+float Rigidbody2D::GetInertiaTensor()
+{
+	return this->shape->GetInertiaTensor(this->GetMass());
+}
+
 
 

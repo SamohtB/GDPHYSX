@@ -178,6 +178,7 @@
     <ClCompile Include="Physics\Rigidbodies\Shape2D.cpp" />
     <ClCompile Include="Physics\Rigidbodies\RigidbodyForceGenerator.cpp" />
     <ClCompile Include="Physics\Rigidbodies\RigidbodySpring.cpp" />
+    <ClCompile Include="Physics\Rigidbodies\RigidbodyContact.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseClasses\EmptyGameObject.h" />
@@ -224,6 +225,7 @@
     <ClInclude Include="Physics\Rigidbodies\RigidbodyGravity.h" />
     <ClInclude Include="Physics\Rigidbodies\Shape2D.h" />
     <ClInclude Include="Physics\Rigidbodies\RigidbodySpring.h" />
+    <ClInclude Include="Physics\Rigidbodies\RigidbodyContact.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
