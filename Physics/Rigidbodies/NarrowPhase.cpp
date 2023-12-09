@@ -205,7 +205,7 @@ unsigned CollisionDetector::BoxAndBox(CollisionBox& one, CollisionBox& two, Coll
 		for(int j = 0; j < 4; j++)
 		{
 			Vector2D va = twoCorners[j];
-			Vector2D vb = twoCorners[(j+1) % 4];
+			Vector2D vb = twoCorners[(j + 1) % 4];
 			Vector2D edge = vb - va;
 
 			Vector2D axis = Vector2D(-edge.y, edge.x);
@@ -245,8 +245,8 @@ unsigned CollisionDetector::BoxAndBox(CollisionBox& one, CollisionBox& two, Coll
 
 		for(int j = 0; j < 4; j++)
 		{
-			Vector2D va = oneCorners[i];
-			Vector2D vb = oneCorners[(i+1) % 4];
+			Vector2D va = oneCorners[j];
+			Vector2D vb = oneCorners[(j + 1) % 4];
 			Vector2D edge = vb - va;
 
 			Vector2D axis = Vector2D(-edge.y, edge.x);
